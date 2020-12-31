@@ -292,7 +292,7 @@ public class AuthorRestController {
 		apimodel.setFileType(fileType);
 		apimodel.setInfoTime(new Date());
 		apimodel.setCommentFromProduction(assignReason);
-		String uri = "http://54.214.210.6/uniprroneapi/manuScript/updateUrl";
+		String uri = "http://54.214.210.6/uniprrapi/manuScript/updateUrl";
 		// String uri = "http://54.214.210.6/uniprrapi/manuScript/updateUrl"; //test
 		// server
 		apimodel.setApiUrl(uri);

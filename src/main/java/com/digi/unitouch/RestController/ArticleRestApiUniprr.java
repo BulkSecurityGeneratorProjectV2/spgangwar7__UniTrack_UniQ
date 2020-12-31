@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ArticleRestApiUniprr extends LoggerClass {
 
 //	@Value("${uniprr.Api}")
-	private String uniprrApi = "http://54.214.210.6/uniprroneapi";
+	private String uniprrApi = "http://54.214.210.6/uniprrapi";
 
 //last stage article in unitouch and update to Uniprrr
 	public ArticleDataApi setCompleteddata(String manuScriptId) {
