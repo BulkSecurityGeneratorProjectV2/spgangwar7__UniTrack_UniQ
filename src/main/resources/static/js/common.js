@@ -616,7 +616,7 @@ $(document).ready(function() {
         initComplete: function () {
             this.api().columns(1).every( function () {
                 var column = this;
-                var select = $('<select class="custom-select tbl-select"><option value="">Journal Abbreviation Name</option></select>')
+                var select = $('<select class="custom-select tbl-select"><option value="">Exam Abbreviation Name</option></select>')
                     .appendTo( $(column.header()).empty() )
                     .on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(
@@ -642,7 +642,7 @@ $(document).ready(function() {
         initComplete: function () {
             this.api().columns(1).every( function () {
                 var column = this;
-                var select = $('<select class="custom-select tbl-select"><option value="">Journal Abbreviation Name</option></select>')
+                var select = $('<select class="custom-select tbl-select"><option value="">Exam Abbreviation Name</option></select>')
                     .appendTo( $(column.header()).empty() )
                     .on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(
@@ -668,7 +668,7 @@ $(document).ready(function() {
         initComplete: function () {
             this.api().columns(3).every( function () {
                 var column = this;
-                var select = $('<select class="custom-select tbl-select"><option value="">Journal Name</option></select>')
+                var select = $('<select class="custom-select tbl-select"><option value="">Exam Name</option></select>')
                     .appendTo( $(column.header()).empty() )
                     .on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(
@@ -695,7 +695,7 @@ $(document).ready(function() {
         initComplete: function () {
             this.api().columns(1).every( function () {
                 var column = this;
-                var select = $('<select class="custom-select tbl-select"><option value="">Journal Name</option></select>')
+                var select = $('<select class="custom-select tbl-select"><option value="">Exam Name</option></select>')
                     .appendTo( $(column.header()).empty() )
                     .on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(
