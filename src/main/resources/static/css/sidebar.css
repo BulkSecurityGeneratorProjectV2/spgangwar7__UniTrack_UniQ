@@ -1,7 +1,6 @@
 
 .sidebar-toggle, .sidebar-toggle:hover, .sidebar-toggle:focus{ 
- /* background-image: linear-gradient(to bottom, #9acd6e, #92ca64, #8ac759, #82c44e, #7ac143); */
- background-color: rgba(0, 0, 0, 0.17);
+ background-image: linear-gradient(to top, #1b8ce2, #3499e9, #48a6f0, #5ab2f7, #6cbffd);
  border:none;
  padding:25px 15px 25px 15px; 
  outline:none; 

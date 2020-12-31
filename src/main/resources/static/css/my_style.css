@@ -585,12 +585,11 @@ box-shadow: 0px 9px 12px 0px rgba(0,0,0,0.12);
 	/* background: #fff; */
 	background:none;
 }
-
 .navbar-header {
 	background-image: linear-gradient(to top, #1b8ce2, #3499e9, #48a6f0, #5ab2f7, #6cbffd);
 }
 
-.navbar {
+/* .navbar {
 	padding: 5px 16px;
 	border-radius: 0;
 	border: none;
@@ -602,9 +601,9 @@ box-shadow: 0px 9px 12px 0px rgba(0,0,0,0.12);
 	background: -ms-linear-gradient(top, rgba(19,129,192,1) 0%, rgba(9,91,142,1) 100%);
 	background: linear-gradient(to bottom, rgba(19,129,192,1) 0%, rgba(9,91,142,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1381c0', endColorstr='#095b8e', GradientType=0 );
-	/* box-shadow: 0 0 10px rgba(0, 0, 0, .2); */
+	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
-
+ */
 .top-panel .menu_outer {
 	width: 69%;
 	margin: 0;
@@ -634,10 +633,11 @@ box-shadow: 0px 9px 12px 0px rgba(0,0,0,0.12);
 	display: inline-flex;
 	padding: 17px 10px 17px 10px;
 	border: 0 none;
-	background-color: rgba(0, 0, 0, 0.17);
+	background-color: rgb(93, 180, 248);
 	margin-top: 0px;
 	color: #fff;
 }
+
 
 .user img {
 	width: 40px;
@@ -663,7 +663,7 @@ box-shadow: 0px 9px 12px 0px rgba(0,0,0,0.12);
 	font-size: 11px;
 	font-weight: 500;
 	text-transform: uppercase;
-	color: #9acd6e;
+	color: #fff;
 	margin: 0;
 	padding: 0;
 }
@@ -1148,7 +1148,7 @@ select option {
 
 .table thead th {
 	/* background-color: #1b8ce2; */
-	background: #007bc5;
+	background: #e8171f;
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -2167,6 +2167,7 @@ rotate
     font-size: 16px;
     padding: 0 3px;
 }
+
 .mrgBottom{
 	margin-bottom:15px;
 }
