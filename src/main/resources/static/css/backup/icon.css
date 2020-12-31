@@ -1,0 +1,224 @@
+/* ------------------------------------------------------------
+************** Navigation Icons CSS  **************************
+------------------------------------------------------------ */
+.jetmenu [class^="icon-"] {
+	width: 25px;
+    height: 23px;
+    display:block;
+    margin:0 auto 5px auto;
+    position: relative;
+    top: 0px;
+}
+[class^="icon-"],
+.sprite {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+}
+.icon-home {
+	background-position: -0px -38px;
+}
+
+.icon-tasks {
+	background-position: -25px -38px;
+}
+
+.icon-dashboard {
+	background-position: -50px -38px;
+}
+
+.icon-create_new {
+	background-position: -75px -38px;
+}
+
+.icon-reports {
+	background-position: -100px -38px;
+}
+
+.icon-workflow {
+	background-position: -125px -38px;
+}
+.icon-admin {
+	background-position: -0px -62px;
+}
+
+/* ------------------------------------------------------------
+************** agency Icons CSS  **************************
+------------------------------------------------------------ */
+
+.icon-aadhaar {
+	background-position: 0 -96px;
+}
+
+.icon-pan {
+	background-position: -44px -96px;
+}
+
+.icon-voter {
+	background-position: -89px -96px;
+}
+
+.icon-electricity {
+	background-position: 0 -141px;
+}
+
+.icon-landline {
+	background-position: -44px -141px;
+}
+
+.icon-companyBig {
+	background-position: -89px -141px;
+}
+
+.icon-tin {
+	background-position: 0 -186px;
+}
+
+.icon-kycBig {
+	background-position: -44px -186px;
+}
+
+.icon-gas {
+	background-position: -89px -186px;
+}
+
+.icon-passport {
+	background-position: 0 -230px;
+}
+
+.icon-dl {
+	background-position: -44px -230px;
+}
+
+.icon-waterBill {
+	background-position: -89px -230px;
+}
+
+.icon-propertyTax {
+	background-position: 0 -274px;
+}
+
+.icon-vehicleReg {
+	background-position: -44px -274px;
+}
+
+.icon-shopEst {
+	background-position: -89px -274px;
+}
+
+.icon-drugVerification {
+	background-position: 0 -318px;
+}
+
+.icon-kycBio {
+	background-position: -44px -318px;
+}
+
+.icon-servicesTax {
+	background-position: -89px -318px;
+}
+
+
+.icon-din {
+	background-position: 0 -362px;
+}
+
+.icon-vaultBig {
+	background-position: 0 -438px;
+}
+
+
+.alert span {
+	width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+	margin-right: 8px;
+	position: relative;
+	top: -1px;
+}
+
+.icon-alert {
+	background-position: -142px -293px;
+}
+
+.icon-success {
+	background-position: 0 -419px;
+}
+
+
+
+/* ------------------------------------------------------------
+************** Other Icons CSS  **************************
+------------------------------------------------------------ */
+.icon-headPhone {
+	width: 21px;
+	height: 22px;
+	background-position: -137px -161px;
+	top: 4px;
+}
+
+.icon-mail {
+	width: 19px;
+	height: 14px;
+	background-position: -139px -186px;
+	top: 2px;
+}
+
+
+.icon-user {
+	width: 16px;
+	height: 19px;
+	display: block;
+	background-position: -142px -201px;
+}
+
+.icon-mail-grey {
+	width: 20px;
+	height: 14px;
+	display: block;
+	background-position: -20px -420px;
+}
+
+.icon-password {
+	width: 15px;
+	height: 19px;
+	display: block;
+	background-position: -144px -221px;
+}
+
+.icon-dot {
+	width: 30px;
+	height: 30px;
+	background-position: -138px -320px;
+	display: block;
+}
+
+.icon-refresh {
+	background-position: -122px -422px;
+}
+
+.icon-search {
+	background-position: -123px -463px;
+}
+.icon-search-new {
+	background-position: 0 -65px;
+	height:26px !important;
+}
+
+.icon-close {
+	width: 16px;
+	height: 15px;
+	background-position: -43px -419px;
+	background-color: transparent;
+	text-indent: -9999px;
+	position: absolute;
+	right: 15px;
+	cursor: pointer;
+	display: block;
+}
+
+@media screen and (max-width: 767px) { 
+	.icon-close {
+		right: 15px;
+	}
+}

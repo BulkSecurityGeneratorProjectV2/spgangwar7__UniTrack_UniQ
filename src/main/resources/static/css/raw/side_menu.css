@@ -1,0 +1,67 @@
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.btn-light{border:1px solid #dcdcdc;color:#9b9b9b;}
+#sidebar {
+	font-size: 13px;
+    width: 250px;
+    position: fixed;
+    top:68px;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+    background: #fff;
+    color: #000;
+    transition: all 0.3s;
+    border-right: 1px solid #e9ecef ;
+	    font-size: 14px;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    position:absolute;
+    right: -28px;
+    top:30px!important;
+}
+#sidebar .sidebar-header .open-btn {
+    background-color:#ed1c24;
+	color: #fff;
+	border:#ed1c24 1px solid;
+	padding:7px 10px;
+	cursor:pointer;
+	border-radius:0 3px 3px 0;
+	font-size:16px;
+}
+#sidebar .sidebar-header .open-btn:hover {
+    background-color:#000;
+	color: #fff;
+	border:#000 1px solid;
+}
+#sidebar .inner_content{ padding:15px 15px 15px 15px ;}
+#sidebar .header{ padding:7px 15px 5px 15px; margin:0; position:relative; font-size:20px; font-weight:300; color:#000; background-color:#edecec;}
+#sidebar .inner_content ul{ padding:0px; margin:0; position:relative; list-style:none;}
+#sidebar .inner_content ul li{ padding:7px 0px; margin:0; position:relative; list-style:none; border-bottom:1px dotted #ced4da; font-size:13px; font-weight:300;}
+#sidebar .inner_content ul li a{color:#000;}
+#sidebar .inner_content ul li a:hover{ padding:5px 10px; color:#ff0000;}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 250px);
+    padding: 0 0 0 25px;
+    /*min-height: 100vh;*/
+    transition: all 0.3s;
+    position: absolute;
+    top: 8px;
+    right: 0px;
+	z-index:-2;
+}
+#content.active {
+    width: 100%;
+}
+
