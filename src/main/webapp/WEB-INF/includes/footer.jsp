@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-4 text-center">
 							 <a href="${context}/dashboard"><img style="height: 35px;"
-								src="resources/images/uni-proff-logo.png"></a>
+								src="resources/images/unitrack-logo_nav.png"></a>
 						</div>
             <div class="col-md-4 text-right">Powered by: <a href="${context}/dashboard"><img src="resources/images/footer-digi-logo.png"></a> </div>
         </div>

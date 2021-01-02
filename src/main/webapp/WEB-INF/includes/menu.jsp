@@ -10,7 +10,7 @@
 		<c:set var="context" value="${pageContext.request.contextPath}" />
 		<div class="navbar-header bg-blue text-center">
 			<a class="logo" href="${context}/dashboard"><img
-				src="resources/images/digitrack.png" class="img-fluid"></a>
+				src="resources/images/unitrack-logo_nav.png" class="img-fluid"></a>
 		</div>
 		<!-- <span class="version">UniTouch 2.0</span> -->
 

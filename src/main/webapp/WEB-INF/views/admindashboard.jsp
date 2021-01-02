@@ -23,7 +23,7 @@
 				<div class="row">
 					<div class="col-md-9">
 						<div class="main_tittle">
-							Publisher's Dashboard <span id="Date"></span>
+							Admin's Dashboard <span id="Date"></span>
 						</div>
 					</div>
 					<div class="wrapper">

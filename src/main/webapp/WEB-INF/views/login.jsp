@@ -46,7 +46,7 @@
 							style="max-width: 230px; margin-bottom: 20px;" alt=""> -->
 						<a
 							class="logo" href="${context}/dashboard"><img
-							src="resources/images/digitrack.png" class="img-fluid"></a>
+							src="resources/images/unitrack-logo.png" class="img-fluid"></a>
 					</div>
 					<!-- <div class="project_name mb-3">
                     	Submissions &amp;
