@@ -97,6 +97,8 @@ public class WorkflowController extends LoggerClass {
 		model.put("workflowTaskSeq", workflowTaskSeq);
 		model.put("taskName", 2);
 		model.put("taskRealName", workflowTaskSeqlist.get(0).getTask().getTaskName());
+		List<EmailTemp> emailTemp=	emailTempService.getEmailList();
+		model.put("emailTemp", emailTemp);
 		return new ModelAndView("/Workflow/DefineRules");
 	}
 
@@ -364,6 +366,7 @@ public class WorkflowController extends LoggerClass {
 		workflowTaskSeqDetails.setAssign_back(workflowTaskSeq.getAssign_back());
 		workflowTaskSeqDetails.setFileType(workflowTaskSeq.getFileType());
 		workflowTaskSeqDetails.setSkip(workflowTaskSeq.getSkip());
+		workflowTaskSeqDetails.setNoms(workflowTaskSeq.getNoms());
 		workflowTaskSeqDetails.setEmailId(workflowTaskSeq.getEmailId());
 		workflowTaskSeqDetails.setEditeIssueJournal(workflowTaskSeq.getEditeIssueJournal());
 		workflowRoleService.updateworkflowTaskSeq(workflowTaskSeqDetails);

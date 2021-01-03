@@ -201,7 +201,7 @@
 																						name="workflowid" value="${workflowid}">
 																				</div>
 																			</div> --%>
-																			<div class="col-sm-6">
+																			<div class="col-sm-3">
 																				<div class="form-group">
 																					<label for="tat">Turn Around Time (In
 																						Day)<sup class="text-red">&lowast;</sup>
@@ -218,6 +218,16 @@
 																						name="workflowid" value="${workflowid}">
 																				</div>
 																			</div>
+																			<div class="col-sm-3">
+																				<div class="form-group">
+																					<label for="tat">Noms<sup class="text-red">&lowast;</sup>
+																					</label> <input type="text" maxlength="3"
+																						placeHolder="Max length is 3" class="form-control"
+																						id="tat" onkeyup="myFunction()" name="noms"
+																						value="${workflowTaskSeq.noms}">
+																				</div>
+																			</div>
+																			
 																			<div class="col-sm-6">
 																				<div class="form-group">
 																					<label for="tat">Role Function <sup

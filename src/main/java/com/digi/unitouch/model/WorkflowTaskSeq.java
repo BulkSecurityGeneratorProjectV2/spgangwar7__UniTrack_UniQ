@@ -72,6 +72,10 @@ public class WorkflowTaskSeq {
 	
 	@Column(name = "tat")
 	private Integer tat;
+	
+
+	@Column(name = "noms")
+	private Integer noms;
 
 	@Column(name = "infloder")
 	private String inFloder;
@@ -260,6 +264,15 @@ public class WorkflowTaskSeq {
 
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+
+	
+	public Integer getNoms() {
+		return noms;
+	}
+
+	public void setNoms(Integer noms) {
+		this.noms = noms;
 	}
 
 	@Override
