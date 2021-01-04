@@ -47,6 +47,9 @@ public class FileVersion {
 
 	@Column(name = "file_size")
 	private String size;
+	
+	@Column(name = "que_in_file")
+	private String queInFile;
 
 	@Column(name = "file_version")
 	private Integer fileVersion;
@@ -198,12 +201,20 @@ public class FileVersion {
 		this.updatedBy = updatedBy;
 	}
 
+	public String getQueInFile() {
+		return queInFile;
+	}
+
+	public void setQueInFile(String queInFile) {
+		this.queInFile = queInFile;
+	}
+
 	@Override
 	public String toString() {
 		return "FileVersion [id=" + id + ", articleId=" + articleId + ", articleDeatils=" + articleDeatils
 				+ ", journalId=" + journalId + ", taskDetails=" + taskDetails + ", taskId=" + taskId + ", fileName="
-				+ fileName + ", fileType=" + fileType + ", size=" + size + ", fileVersion=" + fileVersion
-				+ ", filePath=" + filePath + ", createdAt=" + createdAt + ", created_by=" + created_by
+				+ fileName + ", fileType=" + fileType + ", size=" + size + ", queInFile=" + queInFile + ", fileVersion="
+				+ fileVersion + ", filePath=" + filePath + ", createdAt=" + createdAt + ", created_by=" + created_by
 				+ ", userDetails=" + userDetails + ", updaetdAt=" + updaetdAt + ", updatedBy=" + updatedBy + "]";
 	}
 
