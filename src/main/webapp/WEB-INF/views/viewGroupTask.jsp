@@ -42,7 +42,7 @@
 
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="currency" class="art-left">Article
+													<label for="currency" class="art-left"><spring:message code="chapter.article" />
 														Title :</label> <input type="text"
 														class="form-control title-right2" readonly
 														id="article_title" placeholder="" autocomplete="off"
@@ -51,7 +51,7 @@
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="currency" class="art-left">Manuscript
+													<label for="currency" class="art-left"><spring:message code="manuscript.manuscript" />
 														ID :</label> <input type="text" class="form-control  title-right2"
 														id="journalId" placeholder="" autocomplete="off"
 														value="${articleDetail.aid}" readonly>
@@ -62,7 +62,7 @@
 
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="currency" class="art-left">Journal Name
+													<label for="currency" class="art-left"><spring:message code="book.journal" /> Name
 														:</label> <input type="text" class="form-control title-right2"
 														id="journalId" placeholder="" autocomplete="off"
 														value="${journal.journalName}" readonly>
@@ -81,7 +81,7 @@
 											</div> --%>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="currency" class="art-left">Article DOI
+													<label for="currency" class="art-left"><spring:message code="chapter.article" /> DOI
 														:</label> <input type="text" class="form-control title-right2"
 														id="" placeholder="" autocomplete="off"
 														value="${articleDetail.article_doi}" readonly>
@@ -949,6 +949,11 @@ jQuery(document).ready(function($){
 							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
 							maxlength="3" onkeypress="return isNumberKey(event)">
 					</c:if>
+					<lable>Enter The Number of Que</lable>&nbsp;<sup class="text-red">&lowast;</sup>
+						<input class="form-control" type="text" name="que_in_file"
+							id="queInFile" value="" required
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+							maxlength="5" onkeypress="return isNumberKey(event)">
 					<label><h5>Comments</h5></label>&nbsp;&nbsp; <br>
 					<textarea rows="2" cols="80" maxlength="200" id="assign_reason"
 						name="assign_reason"></textarea>
@@ -1326,6 +1331,12 @@ function validate(){
 			alert("Page number cannot be blank.");
 			return false;
 		}
+		
+		  var queInFile=document.getElementById("queInFile").value;
+			if(queInFile ==''){
+				alert("Que Number cannot be blank.");
+				return false;
+			}
 		
 	   	return true;
 	   	return true;

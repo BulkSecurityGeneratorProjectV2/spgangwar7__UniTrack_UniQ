@@ -49,7 +49,7 @@ public class FileVersion {
 	private String size;
 	
 	@Column(name = "que_in_file")
-	private String queInFile;
+	private Integer queInFile;
 
 	@Column(name = "file_version")
 	private Integer fileVersion;
@@ -201,11 +201,13 @@ public class FileVersion {
 		this.updatedBy = updatedBy;
 	}
 
-	public String getQueInFile() {
+
+
+	public Integer getQueInFile() {
 		return queInFile;
 	}
 
-	public void setQueInFile(String queInFile) {
+	public void setQueInFile(Integer queInFile) {
 		this.queInFile = queInFile;
 	}
 

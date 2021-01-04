@@ -589,6 +589,8 @@ public class TaskManagementController extends LoggerClass {
 		ArticleDetail articleDetail = articleService.findArticleDetailBy(Aid);
 		String Priority = request.getParameter("priority");
 		LOGGER.debug("Priority" + Priority);
+		String queInFilee = request.getParameter("que_in_file");
+		Integer queInFile=Integer.parseInt(queInFilee);
 		System.out.println(Priority);
 		if (Priority == null || Priority == "") {
 			articleDetail.setPriority(articleDetail.getPriority());
@@ -675,6 +677,7 @@ public class TaskManagementController extends LoggerClass {
 						fileVersion.setFileType(attachment.getContentType());
 						fileVersion.setJournalId(JrID);
 						fileVersion.setFilePath(path.toString());
+						fileVersion.setQueInFile(queInFile);
 						fileVersion.setFileVersion(fv.getUpdateNumber());
 						fileVersion.setCreated_by(users.getUserID());
 						fileVersion.setCreatedAt(new Date());
@@ -703,6 +706,7 @@ public class TaskManagementController extends LoggerClass {
 					fileVersion.setJournalId(JrID);
 					fileVersion.setFilePath(path.toString());
 					fileVersion.setFileVersion(maxnum);
+					fileVersion.setQueInFile(queInFile);
 					fileVersion.setCreated_by(users.getUserID());
 					fileVersion.setCreatedAt(new Date());
 					fileVersionService.saveFileVersion(fileVersion);
