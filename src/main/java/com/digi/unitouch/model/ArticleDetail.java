@@ -99,6 +99,10 @@ public class ArticleDetail {
 	@Column(name = "review_date")
 	private String review;
 	
+	
+	@Column(name = "subject_noms")
+	private String subjectnoms;
+	
 	@Transient
 	private String issueTitle;
 	/**
@@ -330,6 +334,16 @@ public class ArticleDetail {
 	public void setReview(String review) {
 		this.review = review;
 	}
+	
+	
+
+	public String getSubjectnoms() {
+		return subjectnoms;
+	}
+
+	public void setSubjectnoms(String subjectnoms) {
+		this.subjectnoms = subjectnoms;
+	}
 
 	@Override
 	public String toString() {
@@ -341,8 +355,8 @@ public class ArticleDetail {
 				+ ", article_status=" + article_status + ", accepted_date=" + accepted_date + ", article_comment="
 				+ article_comment + ", priority=" + priority + ", submissionDate=" + submissionDate
 				+ ", CommentoForProduction=" + CommentoForProduction + ", withdrawStatus=" + withdrawStatus
-				+ ", rejectedDate=" + rejectedDate + ", keywords=" + keywords + ", review=" + review + ", issueTitle="
-				+ issueTitle + "]";
+				+ ", rejectedDate=" + rejectedDate + ", keywords=" + keywords + ", review=" + review + ", subjectnoms="
+				+ subjectnoms + ", issueTitle=" + issueTitle + "]";
 	}
 
 

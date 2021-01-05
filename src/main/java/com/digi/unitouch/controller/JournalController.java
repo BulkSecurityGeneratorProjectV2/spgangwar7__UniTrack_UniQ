@@ -624,7 +624,7 @@ public class JournalController extends LoggerClass {
 			// \r\n created successfully");
 			// return "journalList";
 			//ra.addAttribute("message", journalVo.getJournalAcronym().toUpperCase() + " \r\n Journal created successfully");
-			ra.addAttribute("message", "Journal created successfully");
+			ra.addAttribute("message", "Exam created successfully");
 			ra.addAttribute("css", "success");
 			return "redirect:journalList";
 		}

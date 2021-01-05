@@ -153,13 +153,24 @@
 											</div>
 										</div>
 
-										<div class="col-md-3 numberofauthor">
+										<div class="col-md-3">
 											<div class="form-group">
-												<label for="currency">Number of Authors <sup
-													class="text-red">&lowast;</sup></label> <input  placeholder="Enter the  value eg. 1-9"
-													class='input form-control' type="text" maxlength='1' id="noAuthor" required />
+												<label for="currency">Enter Noms <sup
+													class="text-red">&lowast;</sup></label> <input type="text"
+													class="form-control" style="padding: 3px;"
+													name="subjectnoms" id="subjectnoms" placeholder="noms"
+													autocomplete="off" required>
 											</div>
 										</div>
+
+
+										<!-- 										<div class="col-md-3 numberofauthor"> -->
+<!-- 											<div class="form-group"> -->
+<!-- 												<label for="currency">Number of Authors <sup -->
+<!-- 													class="text-red">&lowast;</sup></label> <input  placeholder="Enter the  value eg. 1-9" -->
+<!-- 													class='input form-control' type="text" maxlength='1' id="noAuthor" required /> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
 									</div>
 
 								</div>
@@ -487,23 +498,23 @@ return false;
 }
 });
 
-function doWork() {
-var number = $('.input').val();
-//$(".input").prop('disabled', true);
-//$(".numberofauthor").remove();
- $('.rmv').remove();
-if (number) {
-	for (var i = 0; i < number; i++) {
-		$('.divtoappend').append("<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' > Author Title <sup class= 'text-red'>&lowast;</sup></label> <select class='form-control' name='title' id='title' required > <option>Dr.</option> <option>Mr.</option> <option>Mrs.</option> <option>Ms.</option> <option>Miss.</option> </select></div></div></div></div>"
-		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author First Name <sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='fname' id='fName' type= 'text' maxlength='50' autocomplete='off' onKeyUp='chText()' onKeyDown='chText()' required /></div></div>"
-		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author Middle Name <sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='mname'' id='mName' value='-' type= 'text' maxlength='50' autocomplete='off' onKeyUp='chText1()' onKeyDown='chText1()' /></div></div>"
-		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author Last Name <sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='lname' id='lName' type= 'text' maxlength='50' autocomplete='off' onKeyUp='chText2()' onKeyDown='chText2()' required /></div></div>"
-		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author Email<sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='email' id='eMail' type= 'email' maxlength='60' autocomplete='off' onKeyUp='chText3()' onKeyDown='chText3()' required /></div></div>"
-		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Is Corresponding<sup class= 'text-red'>&lowast;</sup></label> <select class='form-control' name='is_corresponding' id='is_corresponding' required > <option>Yes</option> <option>No</option> </select></div></div>")
-		//<span class='?' >Span " + i.toString() + "</span>"
-		}
-    }
-}
+// function doWork() {
+// var number = $('.input').val();
+// //$(".input").prop('disabled', true);
+// //$(".numberofauthor").remove();
+//  $('.rmv').remove();
+// if (number) {
+// 	for (var i = 0; i < number; i++) {
+// 		$('.divtoappend').append("<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' > Author Title <sup class= 'text-red'>&lowast;</sup></label> <select class='form-control' name='title' id='title' required > <option>Dr.</option> <option>Mr.</option> <option>Mrs.</option> <option>Ms.</option> <option>Miss.</option> </select></div></div></div></div>"
+// 		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author First Name <sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='fname' id='fName' type= 'text' maxlength='50' autocomplete='off' onKeyUp='chText()' onKeyDown='chText()' required /></div></div>"
+// 		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author Middle Name <sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='mname'' id='mName' value='-' type= 'text' maxlength='50' autocomplete='off' onKeyUp='chText1()' onKeyDown='chText1()' /></div></div>"
+// 		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author Last Name <sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='lname' id='lName' type= 'text' maxlength='50' autocomplete='off' onKeyUp='chText2()' onKeyDown='chText2()' required /></div></div>"
+// 		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Author Email<sup class= 'text-red'>&lowast;</sup></label> <input class='form-control' name='email' id='eMail' type= 'email' maxlength='60' autocomplete='off' onKeyUp='chText3()' onKeyDown='chText3()' required /></div></div>"
+// 		+"<div class='col-md-2 rmv' ><div class= 'form-group rmv'> <label for= 'currency' >Is Corresponding<sup class= 'text-red'>&lowast;</sup></label> <select class='form-control' name='is_corresponding' id='is_corresponding' required > <option>Yes</option> <option>No</option> </select></div></div>")
+// 		//<span class='?' >Span " + i.toString() + "</span>"
+// 		}
+//     }
+// }
 });
 </script>
     

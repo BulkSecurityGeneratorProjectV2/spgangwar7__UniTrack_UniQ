@@ -252,12 +252,12 @@
 													data-toggle="modal" data-target="#extraFileAttachmets">
 													<i class=""></i>Add Additional File
 												</button>
-												<button
+											<!-- 	<button
 													type="button" class="btn  btn-sm btn-outline-success mx-2"
 													
 													data-toggle="modal" data-target="#authorDetailsList">
 													<i class=""></i>Author Details
-												</button>
+												</button> -->
 												<button
 													type="button" class="btn btn-sm btn-outline-success"
 													

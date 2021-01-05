@@ -183,7 +183,7 @@
 														value="${articleDetail.article_type_cd}" readonly>
 												</div>
 											</div>
-											<div class="col-md-6">
+											<!-- <div class="col-md-6">
 												<div class="form-group">
 													<label class="art-left test-lft">Author Details :</label>
 													<button type="button"
@@ -193,7 +193,7 @@
 														<i class=""></i>Author Details
 													</button>
 												</div>
-											</div>
+											</div> -->
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="art-left test-lft">Comments :</label>

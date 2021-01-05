@@ -271,7 +271,7 @@ public class ArticleController extends LoggerClass {
 		boolean stastus = articleService.withdrawArtical(status, articleID);
 		LOGGER.info("withdrawArtical------------------->" + article.getArticle_id()
 				+ "-------------->successfully Status" + stastus);
-		model.put("message", "Article withdraw successfully");
+		model.put("message", "Subject withdraw successfully");
 		model.put("css", "success");
 		List<ArticleDetailsVO> ArticleDetail = articleService.getarticleDetail();
 		// List<ArticleDetail> ArticleDetail = articleService.getallList();
@@ -288,7 +288,7 @@ public class ArticleController extends LoggerClass {
 		boolean stastus = articleService.withdrawArtical(status, articleID);
 		LOGGER.info("withdrawArtical------------------->" + article.getArticle_id()
 				+ "-------------->successfully Status" + stastus);
-		model.put("message", "Article withdraw successfully");
+		model.put("message", "Subject withdraw successfully");
 		model.put("css", "success");
 		List<ArticleDetailsVO> ArticleDetail = articleService.getarticleDetailByjournalID(articledata.getJournalId());
 		model.put("journalWisearticle", ArticleDetail);
@@ -344,20 +344,20 @@ public class ArticleController extends LoggerClass {
 			articleDetail.setKeywords(articleDetail.getKeywords() + "");
 			articleDetail.setSubmissionDate(DateApi.getCurrentIndianTime());
 			int aId = articleService.saveArticle(articleDetail);
-			for (int i = 0; i < author.getFname().length; i++) {
-				AuthorArticleDetails aad = new AuthorArticleDetails();
-				aad.setArticle_id(aId);
-				aad.setTitle(author.getTitle()[i]);
-				aad.seteMail(author.getEmail()[i]);
-				aad.setfName(author.getFname()[i]);
-				aad.setlName(author.getLname()[i]);
-				aad.setAuthor_order(i + 1 + "");
-				aad.setmName(author.getMname()[i]);
-				aad.setCopyright("YES");
-				aad.setIs_corresponding(author.getIs_corresponding()[i]);
-				authorService.save(aad);
-				LOGGER.info("Auhtor info save for " + articleDetail.getArticle_title());
-			}
+//			for (int i = 0; i < author.getFname().length; i++) {
+//				AuthorArticleDetails aad = new AuthorArticleDetails();
+//				aad.setArticle_id(aId);
+//				aad.setTitle(author.getTitle()[i]);
+//				aad.seteMail(author.getEmail()[i]);
+//				aad.setfName(author.getFname()[i]);
+//				aad.setlName(author.getLname()[i]);
+//				aad.setAuthor_order(i + 1 + "");
+//				aad.setmName(author.getMname()[i]);
+//				aad.setCopyright("YES");
+//				aad.setIs_corresponding(author.getIs_corresponding()[i]);
+//				authorService.save(aad);
+//				LOGGER.info("Auhtor info save for " + articleDetail.getArticle_title());
+//			}
 			// authorService.save(author);
 
 			Journal journal = new Journal();
@@ -406,14 +406,14 @@ public class ArticleController extends LoggerClass {
 //			List<Publisher> publisher = publisherService.getallList();
 //			model.put("publisherList", publisher);
 			model.addAttribute("css", "danger");
-			model.addAttribute("message", "Article ID \r\n" + articleDetail.getAid() + "\r\n is already exist");
+			model.addAttribute("message", "Subject ID \r\n" + articleDetail.getAid() + "\r\n is already exist");
 			return "articleCreate";
 		}
 		// String value = mailService.sendEmail(email, Subject, Body);
 		// List<ArticleDetail> ArticleDetail = articleService.getallList();
 		// model.put("ArticleDetail", ArticleDetail);
 		ra.addAttribute("css", "success");
-		ra.addAttribute("message", "Article ID \r\n" + articleDetail.getAid() + "\r\n is created successfully");
+		ra.addAttribute("message", "Subject ID \r\n" + articleDetail.getAid() + "\r\n is created successfully");
 		if (users.getRole().getRoleID() == 1) {
 			return "redirect:articleDetail";
 		} else {
