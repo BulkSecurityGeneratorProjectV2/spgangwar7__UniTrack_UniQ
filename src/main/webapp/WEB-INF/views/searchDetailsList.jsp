@@ -104,30 +104,37 @@
 									<label class="art-left">Article ID: </label> <span
 										class="form-control bg-light title-right">${aid}</span>
 								</div> --%>
-									<div class="col-sm-6 col-md-6">
+								<%-- 	<div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
 											<label class="art-left"><spring:message code="chapter.article" /> DOI: </label> <span
 												class="form-control bg-light title-right">${article_doi}</span>
 										</div>
-									</div>
-									<div class="col-sm-6 col-md-6">
+									</div> --%>
+								<%-- 	<div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
 											<label class="art-left"><spring:message code="chapter.article" /> Keywords: </label> <span
 												class="form-control bg-light title-right">${article_keywords}</span>
 										</div>
-									</div>
-									<div class="col-sm-6 col-md-6">
+									</div> --%>
+								<%-- 	<div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
 											<label class="art-left">Review Date: </label> <span
 												class="form-control bg-light title-right">${reviewDate}</span>
 										</div>
-									</div>
+									</div> --%>
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
 											<label class="art-left">Submission Date: </label> <span
 												class="form-control bg-light title-right">${submissionDate}</span>
 										</div>
-									</div>	</div>
+									</div>	
+									<div class="col-sm-6 col-md-6">
+										<div class="form-group clearfix">
+											<label class="art-left test-lft">Accepted Date: </label> <span
+												class="form-control bg-light title-right">${article_ingested}</span>
+										</div>
+									</div>
+									</div>
 								
 							
 								<div class="row">
@@ -137,24 +144,19 @@
 										class="form-control bg-light title-right">${article_keywords}</span>
 								</div>
 								</div> --%>
-									<div class="col-sm-6 col-md-6">
+									<%-- <div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
 											<label class="art-left">Productions: </label> <span
 												class="form-control bg-light title-right">${commentorproductions}</span>
 										</div>
-									</div><!--  date-box  -->
-									<div class="col-sm-6 col-md-6">
-										<div class="form-group clearfix">
-											<label class="art-left test-lft">Accepted Date: </label> <span
-												class="form-control bg-light title-right">${article_ingested}</span>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-6">
+									</div> --%><!--  date-box  -->
+									
+								<%-- 	<div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
 											<label class="art-left test-lft">Type Of Article: </label> <span
 												class="form-control bg-light title-right ">${article_type}</span>
 										</div>
-									</div>
+									</div> --%>
 
 									<!-- <div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
@@ -180,7 +182,7 @@
 									</div> -->
 								
 									
-									<div class="col-sm-2 col-md-2">
+									<%-- <div class="col-sm-2 col-md-2">
 											<label class="art-left test-lft">Pages : </label>
 											<div class=" title-right"> 
 										<input type="text" id="pagenumber" class="form-control float-left w-75"
@@ -188,8 +190,18 @@
 												oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
 												maxlength="7" onkeypress="return isNumberKey(event)"> 
 										 </div>
+										</div> --%>
+										
+											<div class="col-sm-6 col-md-6">
+											<label class="art-left test-lft">Noms : </label>
+											<div class=" title-right"> 
+										<input type="text" id="pagenumber" class="form-control float-left w-75"
+												placeholder="pages" value="${subjectnoms}"  data-placement="top" title="Page Number Info"
+												oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+												maxlength="7" onkeypress="return isNumberKey(event)"> 
+										 </div>
 										</div>
-										<div class="col-sm-2 col-md-2">
+									<%-- 	<div class="col-sm-2 col-md-2">
 											<label class="art-left test-lft">Color Count : </label>
 											<div class=" title-right"> 
 										<input type="text" id="coloimg" class="form-control w-75"
@@ -198,7 +210,7 @@
 												maxlength="7" onkeypress="return isNumberKey(event)">
 										 </div>
 										</div>
-									<div class="col-sm-2 col-md-2">
+									<div class="col-sm-6 col-md-6">
 											<label class="art-left test-lft">Word Count : </label>
 											<div class=" title-right"> 
 										<input type="text" id="wordcount" class="form-control"
@@ -206,7 +218,7 @@
 												oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
 												maxlength="7" onkeypress="return isNumberKey(event)">
 										 </div>
-										</div>
+										</div> --%>
 									<!-- <div class="col-sm-6 col-md-6">
 										<div class="form-group clearfix">
 											<label class="art-left test-lft">File Attachment : </label> <span> </span> -->

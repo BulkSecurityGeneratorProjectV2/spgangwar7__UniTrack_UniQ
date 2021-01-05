@@ -82,68 +82,68 @@
 											</div>
 										</div>
  --%>
-										<div class="col-md-4">
-											<div class="form-group">
-												<label for="currency"><spring:message code="book.journal" /> Issue Number <sup
-													class="text-red">&lowast;</sup></label> <input type="text"
-													class="form-control" name="journal_issue_number"
-													id="journal_issue_number"
-													onkeypress="return this.value.length < 3;"
-													oninput="if(this.value.length>=10) { this.value = this.value.slice(0,3); }"
-													placeholder="Max length is 3" autocomplete="off" required
-													onpaste="return false;">
-											</div>
-										</div>
+<!-- 										<div class="col-md-4"> -->
+<!-- 											<div class="form-group"> -->
+<%-- 												<label for="currency"><spring:message code="book.journal" /> Issue Number <sup --%>
+<!-- 													class="text-red">&lowast;</sup></label> <input type="text" -->
+<!-- 													class="form-control" name="journal_issue_number" -->
+<!-- 													id="journal_issue_number" -->
+<%-- 													onkeypress="return this.value.length < 3;" --%>
+<!-- 													oninput="if(this.value.length>=10) { this.value = this.value.slice(0,3); }" -->
+<!-- 													placeholder="Max length is 3" autocomplete="off" required -->
+<!-- 													onpaste="return false;"> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
 
 
-										<div class="col-md-4">
+									<!-- 	<div class="col-md-4"> -->
 											<!-- <div class="form-group">
 												<label for="currency">Journal Volume Number <sup class="text-red">&lowast;</sup></label> <input
 													type="text" class="form-control" 
 													name="journal_volume_number" id="journal_volume_number"
 													placeholder="" autocomplete="off" required>
 											</div> -->
-											<div class="form-group">
-												<label for="currency"><spring:message code="book.journal" /> Volume Number <sup
-													class="text-red">&lowast;</sup></label> <input type="text"
-													class="form-control" name="journal_volume_number"
-													id="journal_volume_number"
-													onkeypress="return this.value.length < 2;"
-													oninput="if(this.value.length>=10) { this.value = this.value.slice(0,2); }"
-													placeholder="Max length is 2" autocomplete="off" required
-													onpaste="return false;">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="form-group">
-												<label for="currency"><spring:message code="chapter.article" /> DOI <sup
-													class="text-red">&lowast;</sup></label> <input type="text"
-													class="form-control" name="article_doi"
-													value="${doiPrefix}" id="article_doi" placeholder=""
-													autocomplete="off " required >
-											</div>
-										</div>
+<!-- 											<div class="form-group"> -->
+<%-- 												<label for="currency"><spring:message code="book.journal" /> Volume Number <sup --%>
+<!-- 													class="text-red">&lowast;</sup></label> <input type="text" -->
+<!-- 													class="form-control" name="journal_volume_number" -->
+<!-- 													id="journal_volume_number" -->
+<%-- 													onkeypress="return this.value.length < 2;" --%>
+<!-- 													oninput="if(this.value.length>=10) { this.value = this.value.slice(0,2); }" -->
+<!-- 													placeholder="Max length is 2" autocomplete="off" required -->
+<!-- 													onpaste="return false;"> -->
+<!-- 											</div> -->
+									<!-- 	</div> -->
+<!-- 										<div class="col-md-4"> -->
+<!-- 											<div class="form-group"> -->
+<%-- 												<label for="currency"><spring:message code="chapter.article" /> DOI <sup --%>
+<!-- 													class="text-red">&lowast;</sup></label> <input type="text" -->
+<!-- 													class="form-control" name="article_doi" -->
+<%-- 													value="${doiPrefix}" id="article_doi" placeholder="" --%>
+<!-- 													autocomplete="off " required > -->
+<!-- 											</div> -->
+<!-- 										</div> -->
 
-										<div class="col-md-3">
-											<div class="form-group">
-												<label for="currency"><spring:message code="chapter.article" /> Type <sup
-													class="text-red">&lowast;</sup></label> <input type="text"
-													class="form-control" name="article_type_cd" maxlength="50"
-													id="article_type" placeholder="" autocomplete="off"
-													required>
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label for="currency"><spring:message code="chapter.article" /> keywords <sup
-													class="text-red">&lowast;</sup></label> <input type="text"
-													class="form-control" name="keywords" maxlength="200" id=""
-													placeholder="" autocomplete="off" required>
-											</div>
-										</div>
+<!-- 										<div class="col-md-3"> -->
+<!-- 											<div class="form-group"> -->
+<%-- 												<label for="currency"><spring:message code="chapter.article" /> Type <sup --%>
+<!-- 													class="text-red">&lowast;</sup></label> <input type="text" -->
+<!-- 													class="form-control" name="article_type_cd" maxlength="50" -->
+<!-- 													id="article_type" placeholder="" autocomplete="off" -->
+<!-- 													required> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-3"> -->
+<!-- 											<div class="form-group"> -->
+<%-- 												<label for="currency"><spring:message code="chapter.article" /> keywords <sup --%>
+<!-- 													class="text-red">&lowast;</sup></label> <input type="text" -->
+<!-- 													class="form-control" name="keywords" maxlength="200" id="" -->
+<!-- 													placeholder="" autocomplete="off" required> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
 										
 										
-										<div class="col-md-3">
+										<div class="col-md-4">
 											<div class="form-group">
 												<label for="currency">Upload File <sup
 													class="text-red">&lowast;</sup></label> <input type="file"
@@ -153,9 +153,9 @@
 											</div>
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-4">
 											<div class="form-group">
-												<label for="currency">Enter Noms <sup
+												<label for="currency">Noms <sup
 													class="text-red">&lowast;</sup></label> <input type="text"
 													class="form-control" style="padding: 3px;"
 													name="subjectnoms" id="subjectnoms" placeholder="noms"

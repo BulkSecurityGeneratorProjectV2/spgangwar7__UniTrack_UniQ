@@ -343,6 +343,7 @@ public class ArticleController extends LoggerClass {
 			articleDetail.setPriority("Medium Priority");
 			articleDetail.setKeywords(articleDetail.getKeywords() + "");
 			articleDetail.setSubmissionDate(DateApi.getCurrentIndianTime());
+			articleDetail.setArticle_doi(articleDetail.getAid()+"/"+articleDetail.getSubjectnoms());
 			int aId = articleService.saveArticle(articleDetail);
 //			for (int i = 0; i < author.getFname().length; i++) {
 //				AuthorArticleDetails aad = new AuthorArticleDetails();
@@ -523,8 +524,8 @@ public class ArticleController extends LoggerClass {
 		// final char s = '"';
 		final String SFTPPASS = sftpPassword;
 
-		AutoCompleteScheduler.fileCopyToClientLocation(articleDetail, journal, SFTPHOST, SFTPUSER, SFTPPASS, uu,
-				fileName);
+//		AutoCompleteScheduler.fileCopyToClientLocation(articleDetail, journal, SFTPHOST, SFTPUSER, SFTPPASS, uu,
+//				fileName);
 		Iterator<WorkflowTaskSeq> iterator = uu.iterator();
 		Date name;
 		Date name1 = null;

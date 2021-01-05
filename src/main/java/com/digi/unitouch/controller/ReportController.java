@@ -278,24 +278,31 @@ public class ReportController extends LoggerClass {
 		System.out.println("Issues :" + issuetaskDetails.size());
 
 		Integer TotalPage = null;
+		Integer Totalnoms = null;
+		
 		for (int i = 0; i < taskManagementVoList.size(); i++) {
 			Integer journalID = taskManagementVoList.get(i).getJournalId();
 			Integer articalId = taskManagementVoList.get(i).getArticle_id();
 
 			List<ArticleDetail> list = articleService.getArticleListbyJrIdPage(journalID, articalId);
 			Integer page = null;
+			Integer noms = null;
 			for (int j = 0; j < list.size(); j++) {
 				if (page == null) {
 					page = list.get(j).getArticle_pages();
+					noms=Integer.parseInt(list.get(j).getSubjectnoms());
 				} else {
 					page = page + list.get(j).getArticle_pages();
+					noms=Integer.parseInt(list.get(j).getSubjectnoms());
 				}
 			}
 			if (TotalPage == null) {
 				TotalPage = page;
+				Totalnoms=noms;
 			} else {
 				try {
 					TotalPage = TotalPage + page;
+					Totalnoms=Totalnoms+noms;
 				} catch (NullPointerException e) {
 					System.out.println("NullPointerException Caught");
 				}
@@ -305,7 +312,8 @@ public class ReportController extends LoggerClass {
 		// model.put("totalpages", TotalPage);
 		model.put("totalArticle", taskManagementVoList.size());
 		model.put("totalPage", TotalPage);
-		model.put("totalIssue", issuetaskDetails.size());
+		
+		model.put("totalIssue", Totalnoms);
 		List<ProductivityTaskVo> productivityTaskVo = taskService.getproductivityTaskCount();
 		model.put("productivityTask", productivityTaskVo);
 		List<ArticleDetail> statusRejectCount = articleService.getTotalcountRejected();

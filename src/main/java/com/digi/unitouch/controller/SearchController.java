@@ -167,6 +167,7 @@ public class SearchController extends LoggerClass {
 		model.put("article_doi", articleDetail.getArticle_doi());
 		model.put("article_type", articleDetail.getArticle_type_cd());
 		model.put("reviewDate", articleDetail.getReview());
+		model.put("subjectnoms", articleDetail.getSubjectnoms());
 		model.put("submissionDate", articleDetail.getSubmissionDate());
 		model.put("commentorproductions", articleDetail.getCommentoForProduction());
 		model.put("Journalissn", articleDetail.getJournals().getJournalIssn());

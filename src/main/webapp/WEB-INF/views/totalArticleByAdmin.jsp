@@ -62,12 +62,12 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="main_tittle">
-							Total Article & Issue <span id="Date">Wednesday , 21
+							Total <spring:message code="chapters.articles" /><span id="Date">Wednesday , 21
 								November 2018</span>
 						</div>
 						<label></label>
 						<button type="button" class="btn btn-info btn-sm mt-3"
-							onclick="articleRejected()">Download Withdraw Article</button>
+							onclick="articleRejected()">Download Withdraw <spring:message code="chapters.articles" /></button>
 						<button type="button" class="btn btn-info btn-sm mt-3"
 							onclick="masterReports()">Master Reports</button>
 					</div>
@@ -115,7 +115,7 @@
 									<div class="row">
 										<section class=col-md-4>
 											<section>
-												<label>Total Pages In Article:</label> ${totalPage}
+												<label>Total Pages In <spring:message code="chapter.article" />:</label> ${totalPage}
 												<!-- 	<button type="button" class=" btn-info text-white" style="margin-top: 23px;"
 											onclick="articleRejected()">Rejected Article</button> -->
 											</section>
@@ -148,7 +148,7 @@
         enabled: false
     },
     title: {
-        text: 'Total Articles  & Issues'
+        text: 'Total Subject'
     },
     subtitle: {
         text: ''
@@ -166,7 +166,7 @@
     yAxis: {
         min: 0,
         title: {
-            text: 'Articles  & Issues '
+            text: '<spring:message code="chapters.articles" /> '
         }
     },
     legend: {
@@ -178,9 +178,9 @@
     series: [{
         name: 'Total Numbers',
         data: [
-            ['Total Article', ${totalArticle}],
-            ['Rejected Article', ${statusRejectCount}],
-            ['Total Issue', ${totalIssue}]
+            ['Total <spring:message code="chapters.articles" />', ${totalArticle}],
+            ['Rejected <spring:message code="chapters.articles" />', ${statusRejectCount}],
+            ['Total Noms', ${totalIssue}]
           
         ],
         dataLabels: {
@@ -209,10 +209,10 @@ Highcharts.chart('container1', {
         enabled: false
     },
     title: {
-        text: 'Unitouch Productivity'
+        text: 'Uni-Track Productivity'
     },
     subtitle: {
-        text: 'UniTouch Production Tracking system'
+        text: 'Uni-Track system'
     },
     xAxis: {
         type: 'category',
@@ -227,7 +227,7 @@ Highcharts.chart('container1', {
     yAxis: {
     tickInterval: 1,
         title: {
-            text: 'Articles Delivered(No. Of articles)'
+            text: 'Subject Delivered(No. Of Subject)'
         }, 
         min: 0,
       
@@ -236,10 +236,10 @@ Highcharts.chart('container1', {
         enabled: false
     },
     tooltip: {
-        pointFormat: 'Articles Delivered on : <b>{point.y} Articles</b>'
+        pointFormat: 'Subject Delivered on : <b>{point.y} Subject</b>'
     },
     series: [{
-        name: 'Articles',
+        name: 'Subject',
         data: [  
           
         	<c:forEach items="${productivityTask}" var="map">
