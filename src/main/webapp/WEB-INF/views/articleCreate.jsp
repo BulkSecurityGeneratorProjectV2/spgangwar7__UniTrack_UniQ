@@ -289,15 +289,15 @@ function validate(){
 //	var noAuthor=document.getElementById("noAuthor").value;
 	
 	if(articletitle==''){
-		alert("Article Title cannot be blank.");
+		alert("Subject Title cannot be blank.");
 		return false;
 	}
 	if(aid==''){
-		alert("Article ID cannot be blank.");
+		alert("Subject ID cannot be blank.");
 		return false;
 	}
 	if(journalId=='Please Select'){
-		alert("Journal Name cannot be blank.");
+		alert("Exam Name cannot be blank.");
 		return false;
 	}
  /* 	if(publisherid=='Please Select'){
@@ -306,20 +306,20 @@ function validate(){
  	} */
 
  	if(journalIssueNumber==''){
- 		alert("Journal Issue Number cannot be blank.");
+ 		alert("Exam Issue Number cannot be blank.");
  		return false;
  	}
 	if(journalVolumeNumber==''){
-		alert("Journal Volume Number cannot be blank.");
+		alert("Exam Volume Number cannot be blank.");
 		return false;
 	}
 	if(articleDoi==''){
- 		alert("Article DOI cannot be blank.");
+ 		alert("Subject DOI cannot be blank.");
  		return false;
  	}
 	
 	if(article_type_cd==''){
- 		alert("Article Type cannot be blank.");
+ 		alert("Subject Type cannot be blank.");
  		return false;
  	}
 	if(filepath==''){
