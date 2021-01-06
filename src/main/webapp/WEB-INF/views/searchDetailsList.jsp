@@ -310,7 +310,7 @@
 													<th>Task Name</th>
 													<th>User Name</th>
 													<th>File Download</th>
-													<th>File Replace</th>
+													<th>File Upload</th>
 
 												</tr>
 											</thead>

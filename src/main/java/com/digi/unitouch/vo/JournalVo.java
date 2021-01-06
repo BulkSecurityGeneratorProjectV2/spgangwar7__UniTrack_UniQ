@@ -25,6 +25,7 @@ public class JournalVo {
 	private String fromEmail;
 	private String fromPassword;
 	private String journalType;
+	private Integer examID;
 //	/*Prduction Workflow  Info*/
 //	private String articleWorkflow;
 //	private String directProofing;
@@ -197,6 +198,13 @@ public class JournalVo {
 	public void setJournalType(String journalType) {
 		this.journalType = journalType;
 	}
+	
+	public Integer getExamID() {
+		return examID;
+	}
+	public void setExamID(Integer examID) {
+		this.examID = examID;
+	}
 	@Override
 	public String toString() {
 		return "JournalVo [journalAcronym=" + journalAcronym + ", partnername=" + partnername + ", journalTitle="
@@ -207,154 +215,10 @@ public class JournalVo {
 				+ sequentialIssue + ", journalComments=" + journalComments + ", doiPrefix=" + doiPrefix + ", coden="
 				+ coden + ", creationRule=" + creationRule + ", articleID=" + articleID + ", publisher_id="
 				+ publisher_id + ", fromEmail=" + fromEmail + ", fromPassword=" + fromPassword + ", journalType="
-				+ journalType + "]";
+				+ journalType + ", examID=" + examID + "]";
 	}
 
 	
-//	public String getArticleWorkflow() {
-//		return articleWorkflow;
-//	}
-//	public void setArticleWorkflow(String articleWorkflow) {
-//		this.articleWorkflow = articleWorkflow;
-//	}
-//	public String getDirectProofing() {
-//		return directProofing;
-//	}
-//	public void setDirectProofing(String directProofing) {
-//		this.directProofing = directProofing;
-//	}
-//	public String getIssueWorkflow() {
-//		return issueWorkflow;
-//	}
-//	public void setIssueWorkflow(String issueWorkflow) {
-//		this.issueWorkflow = issueWorkflow;
-//	}
-//	public String getPreProofreadCheck() {
-//		return preProofreadCheck;
-//	}
-//	public void setPreProofreadCheck(String preProofreadCheck) {
-//		this.preProofreadCheck = preProofreadCheck;
-//	}
-//	public String getForthcomingArticles() {
-//		return forthcomingArticles;
-//	}
-//	public void setForthcomingArticles(String forthcomingArticles) {
-//		this.forthcomingArticles = forthcomingArticles;
-//	}
-//	public String getLanguageEditing() {
-//		return languageEditing;
-//	}
-//	public void setLanguageEditing(String languageEditing) {
-//		this.languageEditing = languageEditing;
-//	}
-//	public String getAcceptedManuscript() {
-//		return acceptedManuscript;
-//	}
-//	public void setAcceptedManuscript(String acceptedManuscript) {
-//		this.acceptedManuscript = acceptedManuscript;
-//	}
-//	public String getProofreading() {
-//		return proofreading;
-//	}
-//	public void setProofreading(String proofreading) {
-//		this.proofreading = proofreading;
-//	}
-//	public String getAutoAssess() {
-//		return autoAssess;
-//	}
-//	public void setAutoAssess(String autoAssess) {
-//		this.autoAssess = autoAssess;
-//	}
-//	public String getShowDigiEditLink() {
-//		return showDigiEditLink;
-//	}
-//	public void setShowDigiEditLink(String showDigiEditLink) {
-//		this.showDigiEditLink = showDigiEditLink;
-//	}
-//	public String getAuthorProofing() {
-//		return authorProofing;
-//	}
-//	public void setAuthorProofing(String authorProofing) {
-//		this.authorProofing = authorProofing;
-//	}
-//	public String getAssign() {
-//		return assign;
-//	}
-//	public void setAssign(String assign) {
-//		this.assign = assign;
-//	}
-//	public String getPrePress() {
-//		return prePress;
-//	}
-//	public void setPrePress(String prePress) {
-//		this.prePress = prePress;
-//	}
-//	public String getEditorName() {
-//		return editorName;
-//	}
-//	public void setEditorName(String editorName) {
-//		this.editorName = editorName;
-//	}
-//	public String getXmlNotificatio() {
-//		return xmlNotificatio;
-//	}
-//	public void setXmlNotificatio(String xmlNotificatio) {
-//		this.xmlNotificatio = xmlNotificatio;
-//	}
-//	public String getSignature() {
-//		return signature;
-//	}
-//	public void setSignature(String signature) {
-//		this.signature = signature;
-//	}
-//	public String getSupplierContact() {
-//		return supplierContact;
-//	}
-//	public void setSupplierContact(String supplierContact) {
-//		this.supplierContact = supplierContact;
-//	}
-//	public String geteMail() {
-//		return eMail;
-//	}
-//	public void seteMail(String eMail) {
-//		this.eMail = eMail;
-//	}
-//	public String getRegularArticle() {
-//		return regularArticle;
-//	}
-//	public void setRegularArticle(String regularArticle) {
-//		this.regularArticle = regularArticle;
-//	}
-//	public String getSpecialArticle() {
-//		return specialArticle;
-//	}
-//	public void setSpecialArticle(String specialArticle) {
-//		this.specialArticle = specialArticle;
-//	}
-//	public String getShortFastArticle() {
-//		return shortFastArticle;
-//	}
-//	public void setShortFastArticle(String shortFastArticle) {
-//		this.shortFastArticle = shortFastArticle;
-//	}
-//	public String getReviewFastArticle() {
-//		return reviewFastArticle;
-//	}
-//	public void setReviewFastArticle(String reviewFastArticle) {
-//		this.reviewFastArticle = reviewFastArticle;
-//	}
-//	public String getOther() {
-//		return other;
-//	}
-//	public void setOther(String other) {
-//		this.other = other;
-//	}
-//	public String getCorrections() {
-//		return corrections;
-//	}
-//	public void setCorrections(String corrections) {
-//		this.corrections = corrections;
-//	}
 
 	
 	

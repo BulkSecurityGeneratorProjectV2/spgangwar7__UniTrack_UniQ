@@ -46,9 +46,9 @@
 											<tr>
 												<th>S.No.</th>
 
-												<th data-orderable="false">Journal Abbreviation Name</th>
-												<th>Article Title</th>
-												<th>Article ID</th>
+												<th data-orderable="false"><spring:message code="book.journal" /> Abbreviation Name</th>
+												<th><spring:message code="chapter.article" /> Title</th>
+												<th><spring:message code="chapter.article" /> ID</th>
 												<th>Task Name</th>
 												<th>Stage</th>
 												<th>Schedule Start Date</th>

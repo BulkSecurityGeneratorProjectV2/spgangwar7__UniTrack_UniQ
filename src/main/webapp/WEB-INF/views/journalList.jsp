@@ -15,14 +15,15 @@
 						</button>
 						<strong>  ${message}</strong>
 					</div>
-				</c:if> 
+				</c:if>
 						<div class="main_tittle d-flex align-items-center">
-							<span class="mr-2">Manage <spring:message code="book.journal" /></span> <span id="Date">Mon
-								, 26 Aug 2019</span><span class="ml-auto"><a href="javascript:;"
+							<span class="mr-2">Manage <spring:message
+									code="book.journal" /></span> <span id="Date">Mon , 26 Aug
+								2019</span><span class="ml-auto"><a href="javascript:;"
 								class="btn btn-sm btn-outline-danger" onclick="createJournal()"><i
-									class="fa fa-plus"></i> Add New <spring:message code="book.journal" /></a></span> <span class="pull-right">
-								<!--                     <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#mailSetup"><i class="fa fa-envelope "></i> &nbsp;Email</button> -->
-							</span>
+									class="fa fa-plus"></i> Add New Subject</a> <a href="/createExam"
+								class="btn btn-sm btn-outline-danger"><i class="fa fa-plus"></i>
+									Add New Exam</a></span> <span class="pull-right"> </span>
 						</div>
 					</div>
 				</div>
@@ -43,15 +44,15 @@
 										<thead class="table-head">
 											<tr>
 												<th>Manage <spring:message code="chapter.article" /> Workflow</th>
-												<th>Manage <spring:message code="issue.book" /> Workflow</th>
+												<%-- <th>Manage <spring:message code="issue.book" /> Workflow</th> --%>
 												<th>Email Temp</th>
-												<th>Email Issue Temp</th>
+												<!-- <th>Email Issue Temp</th> -->
 												<th><spring:message code="book.journal" /> Acronym</th>
 												<th><spring:message code="book.journal" /> Title</th>
-												<th>Online ISSN</th>
+												<!-- <th>Online ISSN</th>
 												<th>Print ISSN</th>
 												<th>DOI</th>
-												<th>Open Access Status</th>
+												<th>Open Access Status</th> -->
 												<th>Status</th>
 											</tr>
 										</thead>
@@ -70,7 +71,7 @@
 																data-placement="top" title="View Workflow Info"> <i
 																class="fa fa-eye edit-icon"></i></a>
 														</c:if></td>
-													<td align="center"><input type="hidden" name="jId"
+													<%-- <td align="center"><input type="hidden" name="jId"
 														id="jId"> <c:if
 															test="${temp.issueWorkflowId eq 0}">
 															<a href="#"
@@ -83,7 +84,7 @@
 																data-placement="top" title="View Issue Workflow Info">
 																<i class="fa fa-eye edit-icon"></i>
 															</a>
-														</c:if></td>
+														</c:if></td> --%>
 
 													<td align="center"><c:if
 															test="${(temp.articleWorkflowId ne 0)}">
@@ -98,21 +99,21 @@
 <!-- 																class="fa fa-eye edit-icon"></i></a> -->
 <%-- 														</c:if> --%>
 														</td>
-														<td align="center"><c:if
+														<%-- <td align="center"><c:if
 															test="${(temp.issueWorkflowId ne 0)}">
 															<a href="#" onclick="editIssueMail(${temp.issueWorkflowId},${temp.journalId})"
 																data-placement="top" title="Add Issue Email"> <i
 																class="fa fa-edit edit-icon"></i></a>
 														</c:if> 
-														</td>
+														</td> --%>
 														
 
 													<td>${temp.journalAcronym}</td>
 													<td>${temp.journalName}</td>
-													<td>${temp.onlineIssn}</td>
+													<%-- <td>${temp.onlineIssn}</td>
 													<td>${temp.printIssn}</td>
 													<td>${temp.doiPrefix}</td>
-													<td>${temp.openAccessStatus}</td>
+													<td>${temp.openAccessStatus}</td> --%>
 													<td class="greenActive">${temp.status}</td>
 											</c:forEach>
 										</tbody>

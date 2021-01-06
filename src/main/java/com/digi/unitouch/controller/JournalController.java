@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.digi.unitouch.model.EmailJournalWorkflow;
+import com.digi.unitouch.model.ExamDetails;
 import com.digi.unitouch.model.IssueDetail;
 import com.digi.unitouch.model.Journal;
 import com.digi.unitouch.model.ManageJournalWorkflow;
@@ -36,6 +37,7 @@ import com.digi.unitouch.model.WorkflowTaskSeq;
 import com.digi.unitouch.service.DepartmentService;
 import com.digi.unitouch.service.EmailJournalWorkflowService;
 import com.digi.unitouch.service.EmailTempService;
+import com.digi.unitouch.service.ExamService;
 import com.digi.unitouch.service.IssueDetailService;
 import com.digi.unitouch.service.JournalService;
 import com.digi.unitouch.service.ManageJournalworkflowService;
@@ -80,7 +82,8 @@ public class JournalController extends LoggerClass {
 	UserRoleService userRoleService;
 	@Autowired
 	UserService userService;
-
+	@Autowired
+	ExamService examService;
 	@GetMapping("/journalList")
 	public String journalList(ModelMap model, HttpServletRequest request, @ModelAttribute("message") String message,
 			@ModelAttribute("css") String css) {
@@ -115,8 +118,9 @@ public class JournalController extends LoggerClass {
 	public ModelAndView journal(ModelMap model) {
 		List<Publisher> pubList = pubService.getallList();
 		model.addAttribute("publisherList", pubList);
+		List<ExamDetails> examList=examService.getAllExamList();
+		model.put("examList", examList);
 		System.out.println(journalService.getTaskStatusByJournal());
-
 		return new ModelAndView("journal");
 	}
 
@@ -485,145 +489,10 @@ public class JournalController extends LoggerClass {
 			journal.setHouseStyle(journalVo.getHouseStyle());
 			journal.setPageLayout(journalVo.getPageLayout());
 			journal.setPartnerContact(journalVo.getPartnerContact());
+			journal.setExamID(journalVo.getExamID());
 			Integer jrid = journalService.savejournal(journal);
-			if (journalVo.getPublicationType().equalsIgnoreCase("Quarterly")) {
-				int i = 1;
-				String[] issueQuterly = { "Jan-Mar" + year.toString(), "Apr-Jun" + year.toString(),
-						" Jul-Sep" + year.toString(), " Oct-Dec" + year.toString() };
-				for (String issueTitel : issueQuterly) {
-
-					IssueDetail issue = new IssueDetail();
-					issue.setIssue_title(issueTitel);
-					issue.setCreate_date(new Date());
-					issue.setPublisher_id(142);
-					issue.setJournalId(jrid);
-					issue.setNumber_of_volume_per_year("30");
-					issue.setVolume_year(year.toString());
-					issue.setLast_issue_number("1");
-					issue.setIssueSeqNo(i);
-					issue.setIssue_status("Y");
-					issue.setIsSupplementary("N");
-					issue.setIsScheduled("N");
-					issueDetailService.saveIssue(issue);
-					i++;
-				}
-			}
-			if (journalVo.getPublicationType().equalsIgnoreCase("Bimonthly")) {
-				int i = 1;
-				String[] issueQuterly = { "Jan-Feb" + year.toString(), "Mar-Apr" + year.toString(),
-						"May-Jun" + year.toString(), "Jul-Aug" + year.toString() , "Sep-Oct" + year.toString(), "Nov-Dec" + year.toString() };
-				for (String issueTitel : issueQuterly) {
-
-					IssueDetail issue = new IssueDetail();
-					issue.setIssue_title(issueTitel);
-					issue.setCreate_date(new Date());
-					issue.setPublisher_id(142);
-					issue.setJournalId(jrid);
-					issue.setNumber_of_volume_per_year("30");
-					issue.setVolume_year(year.toString());
-					issue.setLast_issue_number("1");
-					issue.setIssueSeqNo(i);
-					issue.setIssue_status("Y");
-					issue.setIsSupplementary("N");
-					issue.setIsScheduled("N");
-					issueDetailService.saveIssue(issue);
-					i++;
-				}
-			}
-			if (journalVo.getPublicationType().equalsIgnoreCase("Semiannual")) {
-				int i = 1;
-				String[] issueQuterly = { "Jan-Jun" + year.toString(),  "Jul-Dec" + year.toString() };
-				for (String issueTitel : issueQuterly) {
-
-					IssueDetail issue = new IssueDetail();
-					issue.setIssue_title(issueTitel);
-					issue.setCreate_date(new Date());
-					issue.setPublisher_id(142);
-					issue.setJournalId(jrid);
-					issue.setNumber_of_volume_per_year("30");
-					issue.setVolume_year(year.toString());
-					issue.setLast_issue_number("1");
-					issue.setIssueSeqNo(i);
-					issue.setIssue_status("Y");
-					issue.setIsSupplementary("N");
-					issue.setIsScheduled("N");
-					 issueDetailService.saveIssue(issue);
-					i++;
-				}
-			}
-			if (journalVo.getPublicationType().equalsIgnoreCase("Triannual")) {
-				int i = 1;
-				String[] issueQuterly = { "Jan-Apr" + year.toString(),"May-Aug" + year.toString(),"Sep-Dec" + year.toString() };
-				for (String issueTitel : issueQuterly) {
-
-					IssueDetail issue = new IssueDetail();
-					issue.setIssue_title(issueTitel);
-					issue.setCreate_date(new Date());
-					issue.setPublisher_id(142);
-					issue.setJournalId(jrid);
-					issue.setNumber_of_volume_per_year("30");
-					issue.setVolume_year(year.toString());
-					issue.setLast_issue_number("1");
-					issue.setIssueSeqNo(i);
-					issue.setIssue_status("Y");
-					issue.setIsSupplementary("N");
-					issue.setIsScheduled("N");
-					issueDetailService.saveIssue(issue);
-					i++;
-				}
-			}
+						// model.addAttribute("css", "success");
 			
-			if (journalVo.getPublicationType().equalsIgnoreCase("Yearly")) {
-				String[] issueYearly = { "Jan-Dec" + year.toString() };
-				int i = 1;
-				for (String issueTitel : issueYearly) {
-
-					IssueDetail issue = new IssueDetail();
-					issue.setIssue_title(issueTitel);
-					issue.setCreate_date(new Date());
-					issue.setPublisher_id(142);
-					issue.setJournalId(jrid);
-					issue.setNumber_of_volume_per_year("30");
-					issue.setVolume_year(year.toString());
-					issue.setLast_issue_number("1");
-					issue.setIssueSeqNo(i);
-					issue.setIssue_status("Y");
-					issue.setIsSupplementary("N");
-					issue.setIsScheduled("N");
-					issueDetailService.saveIssue(issue);
-					i++;
-				}
-			}
-			if (journalVo.getPublicationType().equalsIgnoreCase("Monthly")) {
-				String[] issueMonthly = { "January-" + year.toString(), "February-" + year.toString(),
-						"March-" + year.toString(), "April-" + year.toString(), "May-" + year.toString(),
-						"June-" + year.toString(), "July-" + year.toString(), "August-" + year.toString(),
-						"September-" + year.toString(), "October-" + year.toString(), "November-" + year.toString(),
-						"December-" + year.toString() };
-				int i = 1;
-				for (String issueTitel : issueMonthly) {
-
-					IssueDetail issue = new IssueDetail();
-					issue.setIssue_title(issueTitel);
-					issue.setCreate_date(new Date());
-					issue.setPublisher_id(142);
-					issue.setJournalId(jrid);
-					issue.setNumber_of_volume_per_year("30");
-					issue.setVolume_year(year.toString());
-					issue.setLast_issue_number("1");
-					issue.setIssueSeqNo(i);
-					issue.setIssue_status("Y");
-					issue.setIsSupplementary("N");
-					issue.setIsScheduled("N");
-					issueDetailService.saveIssue(issue);
-					i++;
-				}
-			}
-			// model.addAttribute("css", "success");
-			// model.addAttribute("message", journalVo.getJournalAcronym().toUpperCase()+"
-			// \r\n created successfully");
-			// return "journalList";
-			//ra.addAttribute("message", journalVo.getJournalAcronym().toUpperCase() + " \r\n Journal created successfully");
 			ra.addAttribute("message", "Exam created successfully");
 			ra.addAttribute("css", "success");
 			return "redirect:journalList";

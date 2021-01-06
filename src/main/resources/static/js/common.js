@@ -716,3 +716,12 @@ $(document).ready(function() {
         "aoColumns": [null, null,null,{ "sType": "natural" }, { "sType": "natural" },null, null,null , null]
     } );
 } );
+
+$(document).ready(function() {
+    $("#locales").change(function () {
+        var selectedOption = $('#locales').val();
+        if (selectedOption != ''){
+            window.location.replace('?language=' + selectedOption);
+        }
+    });
+});

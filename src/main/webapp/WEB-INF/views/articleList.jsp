@@ -37,7 +37,7 @@
 
 							<div class="content_box">
 								<div class="box-body">
-									<table class="table table-striped table-bordered m-0 filter9"
+									<table class="table table-striped table-bordered m-0 filter8"
 										id="articleList">
 										<thead class="table-head">
 											<tr>
@@ -48,7 +48,7 @@
 												<!-- 													<th>Publisher Name</th> -->
 
 
-												<th><spring:message code="chapter.article" /> DOI</th>
+											<%-- 	<th><spring:message code="chapter.article" /> DOI</th> --%>
 												<th><spring:message code="manuscript.manuscript" />  ID</th>
 												<th><spring:message code="chapter.article" /> Type</th>
           										<th>Status</th> 
@@ -65,7 +65,7 @@
 													<td>${temp.journalName}</td>
 													<td>${temp.article_title}</td>
 													<%-- 														<td>${temp.publisher.publisherName}</td> --%>
-													<td>${temp.article_doi}</td>
+												<%-- 	<td>${temp.article_doi}</td> --%>
 													<td>${temp.aid}</td>
 													<td>${temp.article_type_cd}</td>
 													<td>${temp.taskName}</td>

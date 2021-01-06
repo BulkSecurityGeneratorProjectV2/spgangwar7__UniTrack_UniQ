@@ -139,7 +139,7 @@
 						<ul class="slogin-slider-item">
 							<li style="list-style: none;">
 								<h2>
-									UniTrack Intelligent Publishing Platform <br>
+									Unitrack Intelligent Workflow Platform <br>
 								</h2> <!-- <p class="mt-5">Customisable Solution specific to Publishers needs</p> -->
 							</li>
 

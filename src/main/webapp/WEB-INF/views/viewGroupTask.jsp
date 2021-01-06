@@ -949,7 +949,7 @@ jQuery(document).ready(function($){
 							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
 							maxlength="3" onkeypress="return isNumberKey(event)">
 					</c:if>
-					<lable>Enter The Number of Que</lable>&nbsp;<sup class="text-red">&lowast;</sup>
+					<lable>Number of Questions</lable>&nbsp;<sup class="text-red">&lowast;</sup>
 						<input class="form-control" type="text" name="que_in_file"
 							id="queInFile" value="" required
 							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"

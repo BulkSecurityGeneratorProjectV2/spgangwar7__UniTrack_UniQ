@@ -30,7 +30,7 @@
 												</div>
 
 												<div class="">
-													<label><spring:message code="chapter.article" /> DOI</label> <input type="text"
+													<label></label> <input type="hidden"
 														id="article_doi" class="form-control"
 														placeholder="<spring:message code="chapter.article" /> DOI" name="article_doi"
 														value="${article_doi}">
@@ -52,7 +52,7 @@
 												</div>
 
 												<div class="">
-													<label><spring:message code="chapter.article" /> Type</label> <input type="text"
+													<label></label> <input type="hidden"
 														id="article_type_cd" class="form-control"
 														placeholder="<spring:message code="chapter.article" /> Type" name="article_type_cd"
 														value="${article_type_cd}">
@@ -61,13 +61,11 @@
 											</div>
 
 											<div class="col">
-												<div class="">
-													<label>Author Email</label> <input type="text"
+												<input type="hidden"
 														id="authorEmail" class="form-control"
 														placeholder="Author Email" name="authorEmail"
 														value="${authorEmail}">
-												</div>
-
+												
 												<div class="">
 													<label><spring:message code="book.journal" /> Abbr</label> <input type="text"
 														id="journalAbbr" class="form-control"
@@ -77,19 +75,16 @@
 											</div>
 											<div class="col">
 
-												<div class="">
-													<label>Author last name </label> <input type="text"
+												 <input type="hidden"
 														id="lname" class="form-control"
 														placeholder="Author last name" name="lname"
 														value="${lname}">
-												</div>
-
-
 												<div class="">
-													<label><spring:message code="chapter.article" /> keywords</label> <input type="text"
-														id="keywords" class="form-control"
-														placeholder="<spring:message code="chapter.article" /> keywords" name=keywords
-														value="${keywords}">
+													<label><spring:message code="chapter.article" />
+														Status</label> <input type="text" id="articleStatus"
+														class="form-control"
+														placeholder="<spring:message code="chapter.article" /> Status"
+														name="articleStatus" value="${articleStatus}">
 												</div>
 
 
@@ -97,10 +92,7 @@
 
 											<div class="col">
 												<div class="">
-													<label><spring:message code="chapter.article" /> Status</label> <input type="text"
-														id="articleStatus" class="form-control"
-														placeholder="<spring:message code="chapter.article" /> Status" name="articleStatus"
-														value="${articleStatus}">
+													
 												</div>
 												<div class="">
 													<label class="d-block">&nbsp;</label>

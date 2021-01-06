@@ -136,6 +136,9 @@ public class Journal {
 	
 	@Column(name="journal_type")
 	private String journalType;
+	
+	@Column(name="exam_id")
+	private Integer examID;
 
 	public Integer getJournalId() {
 		return journalId;
@@ -440,6 +443,14 @@ public class Journal {
 		this.journalType = journalType;
 	}
 
+	public Integer getExamID() {
+		return examID;
+	}
+
+	public void setExamID(Integer examID) {
+		this.examID = examID;
+	}
+
 	@Override
 	public String toString() {
 		return "Journal [journalId=" + journalId + ", journalAcronym=" + journalAcronym + ", journalAbbrName="
@@ -454,7 +465,8 @@ public class Journal {
 				+ annualPageBudget + ", annualArticleBudget=" + annualArticleBudget + ", authorProofing="
 				+ authorProofing + ", articleWorkflowId=" + articleWorkflowId + ", issueWorkflowId=" + issueWorkflowId
 				+ ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", modifiedAt=" + modifiedAt
-				+ ", modifiedBy=" + modifiedBy + ", lastTaskId=" + lastTaskId + "]";
+				+ ", modifiedBy=" + modifiedBy + ", lastTaskId=" + lastTaskId + ", journalType=" + journalType
+				+ ", examID=" + examID + "]";
 	}
 	
 }

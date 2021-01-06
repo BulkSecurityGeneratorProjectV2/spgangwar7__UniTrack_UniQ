@@ -23,7 +23,11 @@
 				<div class="row">
 					<div class="col-md-9">
 						<div class="main_tittle">
-							Admin's Dashboard <span id="Date"></span>
+							Admin's Dashboard <span id="Date"></span> <select id="locales">
+							<option value="">Please Select </option>
+								<option value="exam">Exam</option>
+								<option value="article">Article</option>
+							</select>
 						</div>
 					</div>
 					<div class="wrapper">
@@ -484,6 +488,7 @@ $(document).ready(function() {
 	document.getElementById("overdue_project").style.display = "none";
 	document.getElementById("complete_project").style.display = "none";
 } );
-    
+
+ 
 </script>
 <!--Main_part_end-->
