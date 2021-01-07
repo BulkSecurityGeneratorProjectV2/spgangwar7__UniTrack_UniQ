@@ -236,13 +236,15 @@
 												<i class="fa fa-close"></i> Cancel
 											</a>
 										</c:if>
-
+&nbsp;
 										<!-- <a class="btn btn-outline-danger" href="#"
 											onclick="GroupTaskList()"><i class="fa fa-close"></i>
 											Cancel</a> -->
-										&nbsp; <a class="btn btn-outline-dark" href="#"
+											
+									<%-- 	&nbsp; <a class="btn btn-outline-dark" href="#"
 											onclick="PauseTask(${article_task_id})"><i
-											class="fa fa-pause"></i> Pause</a> &nbsp;
+											class="fa fa-pause"></i> Pause</a> &nbsp; --%>
+									
 										<%-- <c:if test="${roleId eq 2}">  for folder file 
 											<a class="btn btn-outline-info" href="#" onclick="allfile()"><i
 												class="fa fa-download"></i> Download</a> &nbsp;
@@ -941,7 +943,7 @@ jQuery(document).ready(function($){
 						value="${article_task_id}"> <input type="hidden"
 						name="article_id" id="article_id" value="${article_id}"> <span
 						class="text-red mandatoryMsg"> <sup class="text-red">&lowast;</sup> You can upload ${fileType}
-						file only</span>
+						file</span>
 					<c:if test="${taskId eq 105923}">
 						<lable>Enter Page Number</lable>&nbsp;<sup class="text-red">&lowast;</sup>
 						<input class="form-control" type="text" name=page_number

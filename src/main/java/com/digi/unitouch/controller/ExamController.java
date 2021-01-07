@@ -3,11 +3,14 @@ package com.digi.unitouch.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -40,13 +43,16 @@ public class ExamController {
 		examService.saveExam(examDetails);
 		ra.addAttribute("message", "Exam created successfully");
 		ra.addAttribute("css", "success");
-		return "redirect:journalList";
+		return "redirect:getExamList";
 	}
 	
 	@GetMapping("getExamList")
-	public String getExamList(ModelMap model,RedirectAttributes ra) {
+	public String getExamList(ModelMap model,RedirectAttributes ra, HttpServletRequest request, @ModelAttribute("message") String message,
+			@ModelAttribute("css") String css) {
 		List<ExamDetails> examList=examService.getAllExamList();
 		model.put("examList", examList);
+		model.addAttribute("css", css);
+		model.addAttribute("message", message);
 		return "examList";
 	}
 }

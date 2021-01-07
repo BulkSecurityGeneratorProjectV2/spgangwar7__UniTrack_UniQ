@@ -98,7 +98,7 @@ to {
 								</div>
 							</c:if>
 							<div class="main_tittle d-flex align-items-center">
-							<div class="col-md-8"><label for="currency">Journal Name : ${journalName}</label></div>
+							<div class="col-md-8"><label for="currency"><spring:message code="book.journal" /> Name : ${journalName}</label></div>
 								<div class="col-md-4">
 									<label for="currency">Workflow Name : ${workflowNmae}</label>
 									 <input

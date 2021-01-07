@@ -59,8 +59,10 @@
 			                          </c:if>
 			                        </td>
 			                        <td><c:out value="${temp.name}"/></td>
-			                         <td><c:out value="${temp.workflowType}"/></td>
-			                        <td><c:out value="${temp.createdBY}"/></td>
+													<td><c:if test="${temp.workflowType eq 'Article'}">
+																	Question Workflow
+																</c:if> <%-- <c:out value="${temp.workflowType}"/> --%></td>
+													<td><c:out value="${temp.createdBY}"/></td>
 			                        <td align="center"><c:out value="${temp.createdAT}"/></td>
 			                      </tr>
                                 </c:forEach>

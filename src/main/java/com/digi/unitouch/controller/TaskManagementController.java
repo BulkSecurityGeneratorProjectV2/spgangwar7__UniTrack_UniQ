@@ -772,8 +772,8 @@ public class TaskManagementController extends LoggerClass {
 					articleTaskDetailService.saveArticleTaskDetail(articleTaskDetail1);
 				}
 				model.addAttribute("message",
-						"Article ID : \r\n" + articleDetail.getAid() + "\r\n , \r\n" + "Journal Abbreviation : "
-								+ articleDetail.getJournals().getJournalAbbrName() + "\r\n And \r\n" + "Task Name : "
+						"Question : \r\n" + articleDetail.getAid() + "\r\n , \r\n" + "Subject : "
+								+ articleDetail.getJournals().getJournalName() + "\r\n And \r\n" + "Task Name : "
 								+ taskName + "\r\nCompleted Task Successfully");
 				model.addAttribute("css", "success");
 //		if(nextTaskSequence==1) {
@@ -892,8 +892,8 @@ public class TaskManagementController extends LoggerClass {
 			model.addAttribute("css", "success");
 		} else {
 			model.addAttribute("message",
-					"Article ID : \r\n" + articleDetail.getAid() + "\r\n" + "Journal Abbreviation : "
-							+ articleDetail.getJournals().getJournalAbbrName() + " is completed successfully");
+					"Question  : \r\n" + articleDetail.getArticle_title() + "\r\n" + "Subject : "
+							+ articleDetail.getJournals().getJournalName() + " is completed successfully");
 			model.addAttribute("css", "success");
 		}
 		List<TaskManagementVo> taskManagementVo = taskManagementService.getmyTaskManagementList(users.getUserID());
@@ -1336,8 +1336,8 @@ public class TaskManagementController extends LoggerClass {
 			model.addAttribute("css", "success");
 		} else {
 			model.addAttribute("message",
-					"Article ID :\r\n" + articleDetail.getAid() + "\r\n" + "Journal Abbreviation : "
-							+ articleDetail.getJournals().getJournalAbbrName() + " is approved successfully");
+					"Question  : \r\n" + articleDetail.getArticle_title() + "\r\n" + "Subject : "
+							+ articleDetail.getJournals().getJournalName() + " is approved successfully");
 			model.addAttribute("css", "success");
 		}
 		return new ModelAndView("myTaskList");
@@ -1698,8 +1698,8 @@ public class TaskManagementController extends LoggerClass {
 		
 		Users nextUserData = userService.findByUserId(nextUserId);
 		model.addAttribute("message",
-				"Article ID : \r\n" + articleDetail.getAid() + "\r\n And \r\n" + "Journal Abbreviation : "
-						+ articleDetail.getJournals().getJournalAbbrName() + " is assign back successfully and sent to "
+				"Question  : \r\n" + articleDetail.getArticle_title() + "\r\n" + "Subject : "
+						+ articleDetail.getJournals().getJournalName() + " is assign back successfully and sent to "
 						+ nextUserData.getFirstName() + " \r\n" + nextUserData.getLastName() + "\r\n" + "("
 						+ assignRoleName + ")");
 		model.addAttribute("css", "success");
@@ -1899,8 +1899,8 @@ public class TaskManagementController extends LoggerClass {
 		}
 		List<TaskManagementVo> taskManagementVo = taskManagementService.getmyTaskManagementList(users.getUserID());
 		model.put("taskScheduler", taskManagementVo);
-		String msg = "Article ID : \r\n" + articleDetail.getAid() + "\r\n , Journal Abbreviation : \r\n"
-				+ articleDetail.getJournals().getJournalAbbrName() + " \r\n , \r\n"
+		String msg ="Question  : \r\n" + articleDetail.getArticle_title() + "\r\n" + "Subject : "
+				+ articleDetail.getJournals().getJournalName() + " \r\n , \r\n"
 				+ "Manuscript is skipped successfully and sent to " + manageJournalWorkflow.getUsers().getFirstName()
 				+ " \r\n" + manageJournalWorkflow.getUsers().getLastName() + "\r\n" + "("
 				+ manageJournalWorkflow.getUsers().getRole().getRoleName() + ")";
@@ -2326,8 +2326,8 @@ public class TaskManagementController extends LoggerClass {
 							atd.setTask_status("In Progress");
 							articleTaskDetailService.saveArticleTaskDetail(atd);
 							LOGGER.debug("atd :" + atd.toString());
-							msg = "Article :" + articleDetail.getArticle_title() + "\r\n , Journal Abbreviation : \r\n"
-									+ articleDetail.getJournals().getJournalAbbrName() + " \r\n , \r\n"
+							msg = "Question  : \r\n" + articleDetail.getArticle_title() + "\r\n" + "Subject : "
+									+ articleDetail.getJournals().getJournalName()+ " \r\n , \r\n"
 									+ "Manuscript is complete by proxy successfully and sent to "
 									+ manageJournalWorkflow.getUsers().getFirstName() + " \r\n"
 									+ manageJournalWorkflow.getUsers().getLastName() + "\r\n" + "("
@@ -2636,8 +2636,8 @@ public class TaskManagementController extends LoggerClass {
 		articleService.save(ac);
 		List<TaskManagementVo> taskManagementVo = taskManagementService.getmyTaskManagementList(users.getUserID());
 		model.put("taskScheduler", taskManagementVo);
-		String msg = "Article ID : \r\n" + articleDetail.getAid() + "\r\n , Journal Abbreviation : \r\n"
-				+ articleDetail.getJournals().getJournalAbbrName() + " \r\n , \r\n"
+		String msg = "Question  : \r\n" + articleDetail.getArticle_title() + "\r\n" + "Subject : "
+				+ articleDetail.getJournals().getJournalName() + " \r\n , \r\n"
 				+ "Manuscript is skipped successfully and sent to " + manageJournalWorkflow.getUsers().getFirstName()
 				+ " \r\n" + manageJournalWorkflow.getUsers().getLastName() + "\r\n" + "("
 				+ manageJournalWorkflow.getUsers().getRole().getRoleName() + ")";
@@ -2821,8 +2821,8 @@ public class TaskManagementController extends LoggerClass {
 			articleTaskDetailService.saveArticleTaskDetail(articleTaskDetail1);
 		}
 		Users nextUserData = userService.findByUserId(nextUserId);
-		String msg = "Article ID : \r\n" + articleDetail.getAid() + "\r\n And \r\n" + "Journal Abbreviation : "
-				+ articleDetail.getJournals().getJournalAbbrName() + " is assign back successfully and sent to "
+		String msg ="Question  : \r\n" + articleDetail.getArticle_title() + "\r\n" + "Subject : "
+				+ articleDetail.getJournals().getJournalName()+ " is assign back successfully and sent to "
 				+ nextUserData.getFirstName() + " \r\n" + nextUserData.getLastName() + "\r\n" + "(" + nextUserData.getRole().getRoleName()
 				+ ")";
 		ra.addAttribute("message", msg);

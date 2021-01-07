@@ -109,8 +109,8 @@
 																		class="form-control">
 																		<option>Select Workflow Type</option>
 
-																		<option value="Article">Article</option>
-																		<option value="Issue">Issue</option>
+																		<option value="Article">Question Workflow</option>
+																	<!-- 	<option value="Issue">Issue</option> -->
 
 																	</select>
 																</c:if>

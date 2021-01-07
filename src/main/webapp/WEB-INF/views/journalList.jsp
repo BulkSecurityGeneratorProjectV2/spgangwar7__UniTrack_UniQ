@@ -23,7 +23,11 @@
 								class="btn btn-sm btn-outline-danger" onclick="createJournal()"><i
 									class="fa fa-plus"></i> Add New Subject</a> <a href="/createExam"
 								class="btn btn-sm btn-outline-danger"><i class="fa fa-plus"></i>
-									Add New Exam</a></span> <span class="pull-right"> </span>
+									Add New Exam</a>
+									<a href="getExamList"
+								class="btn btn-sm btn-outline-danger">
+									Exam List</a>
+									</span> <span class="pull-right"> </span>
 						</div>
 					</div>
 				</div>
@@ -49,6 +53,7 @@
 												<!-- <th>Email Issue Temp</th> -->
 												<th><spring:message code="book.journal" /> Acronym</th>
 												<th><spring:message code="book.journal" /> Title</th>
+												<th><spring:message code="exam.exam" /> Exam</th>
 												<!-- <th>Online ISSN</th>
 												<th>Print ISSN</th>
 												<th>DOI</th>
@@ -110,6 +115,7 @@
 
 													<td>${temp.journalAcronym}</td>
 													<td>${temp.journalName}</td>
+													<td>${temp.examDetails.examDescription}</td>
 													<%-- <td>${temp.onlineIssn}</td>
 													<td>${temp.printIssn}</td>
 													<td>${temp.doiPrefix}</td>

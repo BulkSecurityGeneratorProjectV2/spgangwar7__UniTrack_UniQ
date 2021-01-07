@@ -37,12 +37,12 @@
 
 							<div class="content_box">
 								<div class="box-body">
-									<table class="table table-striped table-bordered m-0 filter8"
+									<table class="table table-striped table-bordered m-0 filter7"
 										id="articleList">
 										<thead class="table-head">
 											<tr>
 												<th>S.No</th>
-												<th data-orderable="false"><spring:message code="book.journal" /> Name</th>
+											
 												<th><spring:message code="chapter.article" /> Title</th>
 												
 												<!-- 													<th>Publisher Name</th> -->
@@ -50,7 +50,8 @@
 
 											<%-- 	<th><spring:message code="chapter.article" /> DOI</th> --%>
 												<th><spring:message code="manuscript.manuscript" />  ID</th>
-												<th><spring:message code="chapter.article" /> Type</th>
+													<th data-orderable="false"><spring:message code="book.journal" /> Name</th>
+											<%-- 	<th><spring:message code="chapter.article" /> Type</th> --%>
           										<th>Status</th> 
 												<th>Action</th>
 												<th>Withdraw</th>
@@ -62,12 +63,13 @@
 												varStatus="counter">
 												<tr>
 													<td>${counter.count}</td>
-													<td>${temp.journalName}</td>
+													
 													<td>${temp.article_title}</td>
 													<%-- 														<td>${temp.publisher.publisherName}</td> --%>
 												<%-- 	<td>${temp.article_doi}</td> --%>
 													<td>${temp.aid}</td>
-													<td>${temp.article_type_cd}</td>
+													<td>${temp.journalName}</td>
+												<%-- 	<td>${temp.article_type_cd}</td> --%>
 													<td>${temp.taskName}</td>
 													<td><a href="#" class="btn btn-outline-success btn-sm"
 														onclick="articalDetails('${temp.article_id}')">
@@ -159,7 +161,7 @@ function articalDetails(articleId){
 }
 
 function withdrawArtical(articleId){
-	if (confirm('Are you sure you want to withdraw this article ?')) {
+	if (confirm('Are you sure you want to withdraw this Question ?')) {
 	document.getElementById("article_id").value =articleId;
 	document.getElementById("flag").value = 1;
 	document.getElementById("article").action="${context}/withdrawArtical";

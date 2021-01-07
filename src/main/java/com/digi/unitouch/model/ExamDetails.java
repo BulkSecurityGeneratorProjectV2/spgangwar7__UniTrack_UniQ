@@ -19,6 +19,7 @@ public class ExamDetails {
 	@Id
 	@Column(name = "exam_id")
 	private Integer examID;
+	
 	@Column(name = "exam_name")
 	private String examName;
 
@@ -34,9 +35,9 @@ public class ExamDetails {
 	@Column(name = "journal_id")
 	private Integer journalId;
 
-	@OneToOne(optional = false)
-	@JoinColumn(name = "journal_id", insertable = false, updatable = false)
-	private Journal journals;
+//	@OneToOne(optional = false)
+//	@JoinColumn(name = "journal_id", insertable = false, updatable = false)
+//	private Journal journals;
 
 	@Column(name = "create_by")
 	private Integer create_by;
@@ -89,13 +90,13 @@ public class ExamDetails {
 		this.journalId = journalId;
 	}
 
-	public Journal getJournals() {
-		return journals;
-	}
-
-	public void setJournals(Journal journals) {
-		this.journals = journals;
-	}
+//	public Journal getJournals() {
+//		return journals;
+//	}
+//
+//	public void setJournals(Journal journals) {
+//		this.journals = journals;
+//	}
 
 	public Integer getCreate_by() {
 		return create_by;
@@ -109,8 +110,10 @@ public class ExamDetails {
 	public String toString() {
 		return "ExamDetails [examID=" + examID + ", examName=" + examName + ", examDescription=" + examDescription
 				+ ", createTime=" + createTime + ", updateTime=" + updateTime + ", journalId=" + journalId
-				+ ", journals=" + journals + ", create_by=" + create_by + "]";
+				+ ", create_by=" + create_by + "]";
 	}
+
+	
 
 
 }

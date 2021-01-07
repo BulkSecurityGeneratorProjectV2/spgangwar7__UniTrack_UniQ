@@ -189,6 +189,8 @@ public class WorkflowController extends LoggerClass {
 		model.put("taskDetails", taskDetails);
 		List<Role> role = roleService.getaskList();
 		model.put("rolelist", role);
+		List<EmailTemp> emailTemp=	emailTempService.getEmailList();
+		model.put("emailTemp", emailTemp);
 		WorkflowTaskSeq workflowTaskSeq = workflowRoleService.getTaskId(id);
 		model.put("workflowTaskSeq", workflowTaskSeq);
 		List<WorkflowtaskVO> workflowTaskSeqlist = workflowRoleService.WorkflowtaskVOlist(id);

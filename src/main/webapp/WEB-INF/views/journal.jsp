@@ -31,34 +31,37 @@
 										<!-- <div class="col-md-6"> -->
 
 										<div class="form-group col-md-4">
-											<label><spring:message code="book.journal" /> Acronym <sup class="text-red">&lowast;</sup>
-											</label> <input type="text" required id="journalAcronym"
-												name="journalAcronym" class="form-control title-right3"
-												maxlength="10" placeholder="<spring:message code="book.journal" /> Acronym">
-										</div>
-
-										<div class="form-group col-md-4">
 											
 
 											<label> Exam name <sup class="text-red">&lowast;</sup>
-											</label> <select path="examList" id="examID"
+											</label> <select  onchange="getuniqID()" path="examList" id="examID"
 												name="examID" class="form-control title-right3">
 												<c:forEach items="${examList}" var="temp">
 													<option value="${temp.examID}">${temp.examName}</option>
 												</c:forEach>
 											</select>
 										</div>
-
 										<div class="form-group col-md-4">
 											<label><spring:message code="book.journal" /> Title <sup class="text-red">&lowast;</sup>
-											</label> <input type="text" required name="journalTitle"
-												class="form-control title-right3"
+											</label> <input type="text"  onkeypress="getuniqID()" required name="journalTitle"
+												class="form-control title-right3" id="title"
 												placeholder="<spring:message code="book.journal" /> Title">
 										</div>
+										
+										<div class="form-group col-md-4">
+											<label><spring:message code="book.journal" /> Acronym <sup class="text-red">&lowast;</sup>
+											</label> <input type="text" required id="uniqID"
+												name="journalAcronym" class="form-control title-right3"
+												maxlength="80"  placeholder="<spring:message code="book.journal"/> Acronym">
+										</div>
+
+										
+
+										
 										<div class="form-group col-md-4">
 											<label>From Email
 											</label> <input type="text" maxlength=70 
-												onchange="validate()" id="fromEmail" name="fromEmail"
+												onchange="validate()" id="fromEmail" onclick="getuniqID()"  name="fromEmail"
 												class="form-control title-right3" placeholder="Email">
 										</div>
 									
@@ -72,12 +75,12 @@
 											
 										</div>
 
-										<div class="form-group col-md-4">
+										<!-- <div class="form-group col-md-4">
 											<label> Short Title <sup class="text-red">&lowast;</sup>
 											</label> <input type="text" required maxlength=10 name="shortTitle"
 												id="shortTitle" class="form-control title-right3"
 												placeholder="Short Title">
-										</div>
+										</div> -->
 
 <!-- 										<div class="form-group col-md-4"> -->
 <!-- 											<label> INGESTION Method <sup class="text-red">&lowast;</sup></label> -->
@@ -218,7 +221,7 @@
 							<div class="box-footer text-right">
 								<a class="btn btn-primary" href="${context}/journalList"
 									style="text-transform: capitalize;">Cancel</a>
-								<button type="submit" class="btn btn-danger ">Submit</button>
+								<button type="submit"  onclick="getuniqID()" class="btn btn-danger ">Submit</button>
 							</div>
 
 						</div>
@@ -229,47 +232,6 @@
 	</div>
 </div>
 <script>
-
-function onlineIssn1(){
-	var onlineIssn=document.getElementById("onlineIssn").value;
-	var pattern =new RegExp('[0-9 A-Z a-z]{4}\-[0-9 A-Z a-z]{4}');
-	if (!pattern.test(onlineIssn)) { 
-		alert("Online ISSN pattern is not matched. eg-: XXXX-XXXX");
-		document.getElementById('onlineIssn').value = "";
-		return false;
-	}
-	return true;
-}
-function printIssn1(){
-var printIssn=document.getElementById("printIssn").value;
-var pattern =new RegExp('[0-9 A-Z a-z]{4}\-[0-9 A-Z a-z]{4}');
-if (!pattern.test(printIssn)) { 
-	alert("Print ISSN pattern is not matched. eg-: XXXX-XXXX");
-	document.getElementById('printIssn').value = "";
-	return false;
-}
-return true;
-} 
-// function onlineIssn1(){
-// 		var onlineIssn=document.getElementById("onlineIssn").value;
-// 		var pattern =new RegExp('[0-9]{4}\-[0-9]{4}');
-// 		if (!pattern.test(onlineIssn)) { 
-// 			alert("Online ISSN pattern is not matched. eg-: 0208-6336");
-// 			document.getElementById('onlineIssn').value = "";
-// 			return false;
-// 		}
-// 		return true;
-// 	}
-// function printIssn1(){
-// 	var printIssn=document.getElementById("printIssn").value;
-// 	var pattern =new RegExp('[0-9]{4}\-[0-9]{4}');
-// 	if (!pattern.test(printIssn)) { 
-// 		alert("Print ISSN pattern is not matched. eg-: 0208-6336");
-// 		document.getElementById('printIssn').value = "";
-// 		return false;
-// 	}
-// 	return true;
-// }
 
 $('#journalAcronym').on('input', function() {
     var cursor_pos = $(this).getCursorPosition()
@@ -290,170 +252,11 @@ $('#partnerContact').on('input', function() {
     $(this).attr('data-value', $(this).val())
 })
 
-$('#shortTitle').on('input', function() {
-    var cursor_pos = $(this).getCursorPosition()
-    if(!(/^[a-zA-Z ]*$/.test($(this).val())) ) {
-        $(this).val($(this).attr('data-value'))
-        $(this).setCursorPosition(cursor_pos - 1)
-        return
-    }
-    $(this).attr('data-value', $(this).val())
-})
-
-// $('#doiPrefix').on('input', function() {
-//     var cursor_pos = $(this).getCursorPosition()
-//     if(!(/^[0-9 . / ]*$/.test($(this).val())) ) {
-//         $(this).val($(this).attr('data-value'))
-//         $(this).setCursorPosition(cursor_pos - 1)
-//         return
-//     }
-//     $(this).attr('data-value', $(this).val())
-// })
-
 $('#doiPrefix').keypress(function(event) {
     if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
         event.preventDefault();
     }
 });
-
-$('#coden').on('input', function() {
-    var cursor_pos = $(this).getCursorPosition()
-    if(!(/^[a-z A-Z 0-9  ]*$/.test($(this).val())) ) {
-        $(this).val($(this).attr('data-value'))
-        $(this).setCursorPosition(cursor_pos - 1)
-        return
-    }
-    $(this).attr('data-value', $(this).val())
-})
-// $('#fromEmail').on('input', function() {
-//     var cursor_pos = $(this).getCursorPosition()
-//     if(!(/^[a-zA-Z 0-9 .  @]*$/.test($(this).val())) ) {
-//         $(this).val($(this).attr('data-value'))
-//         $(this).setCursorPosition(cursor_pos - 1)
-//         return
-//     }
-//     $(this).attr('data-value', $(this).val())
-// })
-$('#creationRule').on('input', function() {
-    var cursor_pos = $(this).getCursorPosition()
-    if(!(/^[a-zA-Z 0-9 _ . @ ! -]*$/.test($(this).val())) ) {
-        $(this).val($(this).attr('data-value'))
-        $(this).setCursorPosition(cursor_pos - 1)
-        return
-    }
-    $(this).attr('data-value', $(this).val())
-})
-
-
-$.fn.getCursorPosition = function() {
-    if(this.length == 0) return -1
-    return $(this).getSelectionStart()
-}
-$.fn.setCursorPosition = function(position) {
-    if(this.lengh == 0) return this
-    return $(this).setSelection(position, position)
-}
-$.fn.getSelectionStart = function(){
-  if(this.lengh == 0) return -1
-  input = this[0]
-  var pos = input.value.length
-  if (input.createTextRange) {
-    var r = document.selection.createRange().duplicate()
-    r.moveEnd('character', input.value.length)
-    if (r.text == '') 
-    pos = input.value.length
-    pos = input.value.lastIndexOf(r.text)
-  } else if(typeof(input.selectionStart)!="undefined")
-  pos = input.selectionStart
-  return pos
-}
-$.fn.setSelection = function(selectionStart, selectionEnd) {
-  if(this.lengh == 0) return this
-  input = this[0]
-  if(input.createTextRange) {
-    var range = input.createTextRange()
-    range.collapse(true)
-    range.moveEnd('character', selectionEnd)
-    range.moveStart('character', selectionStart)
-    range.select()
-  }
-  else if (input.setSelectionRange) {
-    input.focus()
-    input.setSelectionRange(selectionStart, selectionEnd)
-  }
-  return this
-}  
-$('#onlineIssn').on('input', function() {
-	 var $this = $(this);
-	 var input = $this.val();
-	 input = input.replace(/[\()\W\s\._\-]+/g, '');
-	 
-	 var split = 4;
-	 var chunk = [];
-	  
-	 for (var i = 0, len = input.length; i < len; i += split) {
-	     split = ( i >= 4 && i <= 9 ) ? 4 : 4;
-	     chunk.push( input.substr( i, split ) );
-	 }
-	  
-	 $this.val(function() {
-	     return chunk.join("-");
-	 });
-});
-$('#printIssn').on('input', function() {
-	 var $this = $(this);
-	 var input = $this.val();
-	 input = input.replace(/[\()\W\s\._\-]+/g, '');
-
-	 var split = 4;
-	 var chunk = [];
-	  
-	 for (var i = 0, len = input.length; i < len; i += split) {
-	     split = ( i >= 4 && i <= 9 ) ? 4 : 4;
-	     chunk.push( input.substr( i, split ) );
-	 }
-	  
-	 $this.val(function() {
-	     return chunk.join("-");
-	 });
-});
-/* 
-$('#onlineIssn').on('input', function() {
-	 var $this = $(this);
-	 var input = $this.val();
-	 input = input.replace(/[\(a-zA-Z)\W\s\._\-]+/g, '');
-	 
-	 var split = 4;
-	 var chunk = [];
-	  
-	 for (var i = 0, len = input.length; i < len; i += split) {
-	     split = ( i >= 4 && i <= 9 ) ? 4 : 4;
-	     chunk.push( input.substr( i, split ) );
-	 }
-	  
-	 $this.val(function() {
-	     return chunk.join("-");
-	 });
-})
- $('#printIssn').on('input', function() {
-	 var $this = $(this);
-	 var input = $this.val();
-	 input = input.replace(/[\(a-zA-Z)\W\s\._\-]+/g, '');
-
-	 var split = 4;
-	 var chunk = [];
-	  
-	 for (var i = 0, len = input.length; i < len; i += split) {
-	     split = ( i >= 4 && i <= 9 ) ? 4 : 4;
-	     chunk.push( input.substr( i, split ) );
-	 }
-	  
-	 $this.val(function() {
-	     return chunk.join("-");
-	 });
-})
-
- */
 </script>
 <Script>
 
@@ -468,5 +271,19 @@ function validate() {
 		}
     return true;	
 }
+
+
+
+function getuniqID(){
+	debugger;
+	var title = document.getElementById("title").value
+	 var value = $("#examID option:selected"); 
+	//alert(aid);
+	$("#uniqID").prop('disabled', true);
+//	 $('#examID').val(examID);
+//	 $('#title').val(title);
+	 var journal = title +'/'+value.text();
+	 $('#uniqID').val(journal);			
+	}
 </Script>
 

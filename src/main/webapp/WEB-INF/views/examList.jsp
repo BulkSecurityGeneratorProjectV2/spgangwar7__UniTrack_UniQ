@@ -12,7 +12,10 @@
 								Details</span> <span id="Date">Mon , 26 Aug 2019</span><span
 								class="ml-auto"><a href="/createExam"
 								class="btn btn-sm btn-outline-danger"><i class="fa fa-plus"></i>
-									Add New <spring:message code="exam.exam" /></a></span> <span
+									Add New <spring:message code="exam.exam" /></a>
+									<a href="/journalList"
+								class="btn btn-sm btn-outline-danger">
+								 <spring:message code="book.journal" /> List</a></span> <span
 								class="pull-right"> </span>
 						</div>
 					</div>

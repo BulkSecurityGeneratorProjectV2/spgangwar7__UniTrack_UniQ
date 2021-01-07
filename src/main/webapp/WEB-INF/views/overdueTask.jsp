@@ -7,7 +7,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="main_tittle d-flex align-items-center">
-								<span class="mr-2">Overdue Article In My Task</span> <span id="Date">Mon
+								<span class="mr-2">Overdue <spring:message code="chapter.article" /> In My Task</span> <span id="Date">Mon
 									, 26 Aug 2019</span><!-- <span class="ml-auto"><a
 									href="javascript:;" class="btn btn-sm btn-outline-danger"
 									onclick="createArticle()"><i class="fa fa-plus"></i> Add New</a></span> -->
@@ -31,8 +31,8 @@
 											<thead class="table-head">
 												<tr>
 											<th>S.No.</th>
-											<th>Article ID</th>
-											<th>Journal Abbreviation Name</th>
+											<th><spring:message code="chapter.article" /> ID</th>
+											<th><spring:message code="book.journal" /> Abbreviation Name</th>
 											<th>Title</th>
 											<th>Task Name</th>
 											<th>Stage</th>

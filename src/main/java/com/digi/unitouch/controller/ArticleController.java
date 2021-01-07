@@ -258,7 +258,7 @@ public class ArticleController extends LoggerClass {
 		model.put("ArticleDetail", ArticleDetail);
 		model.addAttribute("css", css);
 		model.addAttribute("message", message);
-		LOGGER.info("--------ArticleController  ----->---articleDetail------------------name=>" + name);
+		LOGGER.info("--------ArticleController  ----->---Question Detail------------------name=>" + name);
 		return new ModelAndView("articleList");
 	}
 
@@ -269,14 +269,14 @@ public class ArticleController extends LoggerClass {
 		Integer articleID = article.getArticle_id();
 		System.out.println(articleID);
 		boolean stastus = articleService.withdrawArtical(status, articleID);
-		LOGGER.info("withdrawArtical------------------->" + article.getArticle_id()
+		LOGGER.info("withdraw Question------------------->" + article.getArticle_id()
 				+ "-------------->successfully Status" + stastus);
-		model.put("message", "Subject withdraw successfully");
+		model.put("message", "Question withdraw successfully");
 		model.put("css", "success");
 		List<ArticleDetailsVO> ArticleDetail = articleService.getarticleDetail();
 		// List<ArticleDetail> ArticleDetail = articleService.getallList();
 		model.put("ArticleDetail", ArticleDetail);
-		LOGGER.info("--------ArticleController  ----->---withdrawArtical-----------------name------" + name);
+		LOGGER.info("--------ArticleController  ----->---withdraw  Question-----------------name------" + name);
 		return new ModelAndView("articleList");
 	}
 
@@ -286,9 +286,9 @@ public class ArticleController extends LoggerClass {
 		Integer articleID = article.getArticle_id();
 		ArticleDetail articledata = articleService.findArticleDetailBy(articleID);
 		boolean stastus = articleService.withdrawArtical(status, articleID);
-		LOGGER.info("withdrawArtical------------------->" + article.getArticle_id()
+		LOGGER.info("withdraw Question------------------->" + article.getArticle_id()
 				+ "-------------->successfully Status" + stastus);
-		model.put("message", "Subject withdraw successfully");
+		model.put("message", "Question withdraw successfully");
 		model.put("css", "success");
 		List<ArticleDetailsVO> ArticleDetail = articleService.getarticleDetailByjournalID(articledata.getJournalId());
 		model.put("journalWisearticle", ArticleDetail);
@@ -343,6 +343,7 @@ public class ArticleController extends LoggerClass {
 			articleDetail.setPriority("Medium Priority");
 			articleDetail.setKeywords(articleDetail.getKeywords() + "");
 			articleDetail.setSubmissionDate(DateApi.getCurrentIndianTime());
+			articleDetail.setAccepted_date(DateApi.getCurrentIndianTime());
 			articleDetail.setArticle_doi(articleDetail.getAid()+"/"+articleDetail.getSubjectnoms());
 			int aId = articleService.saveArticle(articleDetail);
 //			for (int i = 0; i < author.getFname().length; i++) {
@@ -407,14 +408,14 @@ public class ArticleController extends LoggerClass {
 //			List<Publisher> publisher = publisherService.getallList();
 //			model.put("publisherList", publisher);
 			model.addAttribute("css", "danger");
-			model.addAttribute("message", "Subject ID \r\n" + articleDetail.getAid() + "\r\n is already exist");
+			model.addAttribute("message", "Question ID \r\n" + articleDetail.getAid() + "\r\n is already exist");
 			return "articleCreate";
 		}
 		// String value = mailService.sendEmail(email, Subject, Body);
 		// List<ArticleDetail> ArticleDetail = articleService.getallList();
 		// model.put("ArticleDetail", ArticleDetail);
 		ra.addAttribute("css", "success");
-		ra.addAttribute("message", "Subject ID \r\n" + articleDetail.getAid() + "\r\n is created successfully");
+		ra.addAttribute("message", "Question ID \r\n" + articleDetail.getAid() + "\r\n is created successfully");
 		if (users.getRole().getRoleID() == 1) {
 			return "redirect:articleDetail";
 		} else {
@@ -441,7 +442,7 @@ public class ArticleController extends LoggerClass {
 			model.put("doiPrefix", doiprefix);
 			applicatonResponse.setPayload(doiprefix);
 		}
-		LOGGER.debug("Article cnt journal ------------ getuserListByjournalID :" + journal1.getJournalName());
+		LOGGER.debug("Question cnt journal ------------ getuserListByjournalID :" + journal1.getJournalName());
 		applicatonResponse.setMessage("OK");
 		return new ResponseEntity<ApplicationResponse>(applicatonResponse, HttpStatus.OK);
 	}

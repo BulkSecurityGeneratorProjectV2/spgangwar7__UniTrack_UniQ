@@ -305,11 +305,11 @@ public class JournalController extends LoggerClass {
 		if (status) {
 			Users user = userService.findByUserId(manageJournalWorkflow.getUser_id());
 			ra.addAttribute("message", user.getFirstName() + "&nbsp; " + user.getLastName() + "&nbsp;("
-					+ user.getRole().getRoleName() + ")&nbsp; is updated in Journal successfully");
+					+ user.getRole().getRoleName() + ")&nbsp; is updated in Subject successfully");
 			ra.addAttribute("css", "success");
 		} else {
 			ra.addAttribute("message", mjw.getUsers().getFirstName() + "&nbsp; " + mjw.getUsers().getLastName()
-					+ "&nbsp; is not updated in Journal successfully");
+					+ "&nbsp; is not updated in Subject successfully");
 			ra.addAttribute("css", "danger");
 		}
 
@@ -454,18 +454,20 @@ public class JournalController extends LoggerClass {
 	public String createUser(@Valid @ModelAttribute("journal") JournalVo journalVo, BindingResult result,
 			ModelMap model, RedirectAttributes ra) {
 		Journal jr = journalService.getJournalbyabbrname(journalVo.getJournalAcronym().toLowerCase());
-		Journal jr1 = journalService.getJournalname(journalVo.getJournalTitle());
+	//	Journal jr1 = journalService.getJournalname(journalVo.getJournalTitle());
 		List<Journal> journalList = journalService.getallList();
 		model.put("journallist", journalList);
 		if (jr != null) {
 			ra.addAttribute("css", "danger");
 			ra.addAttribute("message", journalVo.getJournalAcronym().toUpperCase() + " \r\n already exist");
 			return "redirect:journalList";
-		} else if (jr1 != null) {
-			ra.addAttribute("css", "danger");
-			ra.addAttribute("message", journalVo.getJournalTitle() + " \r\n already exist");
-			return "redirect:journalList";
-		}else {
+		}
+//		else if (jr1 != null) {
+//			ra.addAttribute("css", "danger");
+//			ra.addAttribute("message", journalVo.getJournalTitle() + " \r\n already exist");
+//			return "redirect:journalList";
+//		}
+		else {
 			Journal journal = new Journal();
 			journal.setJournalName(journalVo.getJournalTitle());
 			journal.setPrintIssn(journalVo.getPrintIssn());
@@ -493,7 +495,7 @@ public class JournalController extends LoggerClass {
 			Integer jrid = journalService.savejournal(journal);
 						// model.addAttribute("css", "success");
 			
-			ra.addAttribute("message", "Exam created successfully");
+			ra.addAttribute("message", "Subject created successfully");
 			ra.addAttribute("css", "success");
 			return "redirect:journalList";
 		}

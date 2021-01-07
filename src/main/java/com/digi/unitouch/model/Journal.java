@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -139,6 +141,10 @@ public class Journal {
 	
 	@Column(name="exam_id")
 	private Integer examID;
+	
+	@OneToOne(optional = false)
+	@JoinColumn(name = "exam_id", insertable = false, updatable = false)
+	private ExamDetails examDetails;
 
 	public Integer getJournalId() {
 		return journalId;
@@ -450,6 +456,15 @@ public class Journal {
 	public void setExamID(Integer examID) {
 		this.examID = examID;
 	}
+	
+
+	public ExamDetails getExamDetails() {
+		return examDetails;
+	}
+
+	public void setExamDetails(ExamDetails examDetails) {
+		this.examDetails = examDetails;
+	}
 
 	@Override
 	public String toString() {
@@ -466,7 +481,7 @@ public class Journal {
 				+ authorProofing + ", articleWorkflowId=" + articleWorkflowId + ", issueWorkflowId=" + issueWorkflowId
 				+ ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", modifiedAt=" + modifiedAt
 				+ ", modifiedBy=" + modifiedBy + ", lastTaskId=" + lastTaskId + ", journalType=" + journalType
-				+ ", examID=" + examID + "]";
+				+ ", examID=" + examID + ", examDetails=" + examDetails + "]";
 	}
 	
 }
