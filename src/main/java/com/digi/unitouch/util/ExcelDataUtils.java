@@ -44,7 +44,7 @@ public class ExcelDataUtils {
 		hssfSheet.setColumnWidth(10, 2000);
 		hssfSheet.setColumnWidth(11, 6000);
 		hssfSheet.setColumnWidth(12, 5000);
-		hssfSheet.setColumnWidth(13, 5000);
+	//	hssfSheet.setColumnWidth(13, 5000);
 		//hssfSheet.setColumnWidth(9, 6000);
 
 		response.setContentType("application/vnd.ms-excel");
@@ -78,11 +78,11 @@ public class ExcelDataUtils {
 	private static void setExcelHeader(HSSFSheet hssfSheet) {
 		HSSFRow hssfRow = hssfSheet.createRow(1);
 
-		hssfRow.createCell(0).setCellValue("Article Title");
-		hssfRow.createCell(1).setCellValue("Article DOI");
-		hssfRow.createCell(2).setCellValue(" ArticleID");
+		hssfRow.createCell(0).setCellValue("Question Title");
+		hssfRow.createCell(1).setCellValue("Question DOI");
+		hssfRow.createCell(2).setCellValue(" Question ID");
 	//	hssfRow.createCell(3).setCellValue("Article Title");
-		hssfRow.createCell(3).setCellValue("Journal Name");
+		hssfRow.createCell(3).setCellValue("Subject Name");
 		hssfRow.createCell(4).setCellValue("Issue Name");
 		hssfRow.createCell(5).setCellValue("Page Form");
 		hssfRow.createCell(6).setCellValue("Page To");
@@ -92,9 +92,9 @@ public class ExcelDataUtils {
 		//hssfRow.createCell(8).setCellValue("Workflow Name");
 	//	hssfRow.createCell().setCellValue("File Flag");
 		hssfRow.createCell(10).setCellValue("Sequence");
-		hssfRow.createCell(11).setCellValue("Article Type");
-		hssfRow.createCell(12).setCellValue("Journal Volume");
-		hssfRow.createCell(13).setCellValue("Issue Volume");
+		hssfRow.createCell(11).setCellValue("Question Type");
+		hssfRow.createCell(12).setCellValue("Subject Volume");
+	//	hssfRow.createCell(13).setCellValue("Issue Volume");
 		
 	}
 
@@ -117,7 +117,7 @@ public class ExcelDataUtils {
 			hssfRow.createCell(10).setCellValue(data.getSequenceNo());
 			hssfRow.createCell(11).setCellValue(data.getArticleType());
 			hssfRow.createCell(12).setCellValue(data.getJournalVN());
-			hssfRow.createCell(13).setCellValue(data.getIssueVN());
+		//	hssfRow.createCell(13).setCellValue(data.getIssueVN());
 			/*
 			 * if (data.getCategory() != null)
 			 * hssfRow.createCell(3).setCellValue(Util.checkString(data.getCategory()));
@@ -237,11 +237,11 @@ public class ExcelDataUtils {
 	private static void setExcelHeaderAdmin(HSSFSheet hssfSheet) {
 		HSSFRow hssfRow = hssfSheet.createRow(1);
 
-		hssfRow.createCell(0).setCellValue("Journal Name");
-		hssfRow.createCell(1).setCellValue("Manuscript ID");
-		hssfRow.createCell(2).setCellValue("Article Title");
-		hssfRow.createCell(3).setCellValue("Article DOI");
-		hssfRow.createCell(4).setCellValue("Article Type");
+		hssfRow.createCell(0).setCellValue("Subject Name");
+		hssfRow.createCell(1).setCellValue("Question ID");
+		hssfRow.createCell(2).setCellValue("Question Title");
+		hssfRow.createCell(3).setCellValue("Question DOI");
+		hssfRow.createCell(4).setCellValue("Question Type");
 		hssfRow.createCell(5).setCellValue("Current Phase");
 		hssfRow.createCell(6).setCellValue("Age Days");
 		hssfRow.createCell(7).setCellValue("Accepted Date");
@@ -313,11 +313,11 @@ public class ExcelDataUtils {
 		HSSFRow hssfRow = hssfSheet.createRow(1);
 
 //		hssfRow.createCell(0).setCellValue("Journal Name");
-		hssfRow.createCell(0).setCellValue("Journal AbbrName");
-		hssfRow.createCell(1).setCellValue("ManuScipt ID");
-		hssfRow.createCell(2).setCellValue("Article Title");
-		hssfRow.createCell(3).setCellValue("Article Status");
-		hssfRow.createCell(4).setCellValue("Article Type");
+		hssfRow.createCell(0).setCellValue("Subject AbbrName");
+		hssfRow.createCell(1).setCellValue("Question ID");
+		hssfRow.createCell(2).setCellValue("Question Title");
+		hssfRow.createCell(3).setCellValue("Question Status");
+		hssfRow.createCell(4).setCellValue("Question Type");
 		hssfRow.createCell(5).setCellValue("Accepted Date");
 
 	}
@@ -372,7 +372,7 @@ public class ExcelDataUtils {
 
 	private static void setExcelHeaderTotal(HSSFSheet hssfSheet) {
 		HSSFRow hssfRow = hssfSheet.createRow(1);
-		hssfRow.createCell(0).setCellValue("Total Article");
+		hssfRow.createCell(0).setCellValue("Total Question");
 		hssfRow.createCell(1).setCellValue("Total Issue");
 		hssfRow.createCell(2).setCellValue("Total No of Page");
 		
@@ -441,12 +441,12 @@ public class ExcelDataUtils {
 	private static void setExcelHeadeRejected(HSSFSheet hssfSheet) {
 		HSSFRow hssfRow = hssfSheet.createRow(1);
 
-		hssfRow.createCell(0).setCellValue("Journal Name");
-		hssfRow.createCell(1).setCellValue("Manuscript ID");
-		hssfRow.createCell(2).setCellValue("Article Title");
-		hssfRow.createCell(3).setCellValue("Journal AbbrName");
-		hssfRow.createCell(4).setCellValue("Article Type");
-		hssfRow.createCell(5).setCellValue("Article Status");
+		hssfRow.createCell(0).setCellValue("Subject Name");
+		hssfRow.createCell(1).setCellValue("Question ID");
+		hssfRow.createCell(2).setCellValue("Question Title");
+		hssfRow.createCell(3).setCellValue("Subject AbbrName");
+		hssfRow.createCell(4).setCellValue("Question Type");
+		hssfRow.createCell(5).setCellValue("Question Status");
 		hssfRow.createCell(6).setCellValue("Rejected Date");
 		
 	}

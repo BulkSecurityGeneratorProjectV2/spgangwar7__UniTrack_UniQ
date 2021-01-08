@@ -29,9 +29,14 @@ public interface FileVersionService {
 	
 	List<IssueFileVersion> findByIssueIdAndJournalIdAndFileName(Integer issue_id, Integer journalId,String fileName);
 
-	int maxVersionArticleIdAndJournalId(Integer article_id, Integer journalId);
+	Integer maxVersionArticleIdAndJournalId(Integer article_id, Integer journalId);
 	
-	int maxVersionIssueIdAndJournalId(Integer issueId, Integer journalId);
+	Integer maxVersionIssueIdAndJournalId(Integer issueId, Integer journalId);
 	
 	
+	public Integer maxArticleIdAndJournalId();
+
+	public List<FileVersion> getbyuserid(Integer userId);
+
+	public Integer getSumbyUserid(Integer userId);
 }

@@ -233,7 +233,7 @@
 </div>
 <script>
 
-$('#journalAcronym').on('input', function() {
+$('#uniqID').on('input', function() {
     var cursor_pos = $(this).getCursorPosition()
     if(!(/^[a-zA-Z ']*$/.test($(this).val())) ) {
         $(this).val($(this).attr('data-value'))
@@ -241,7 +241,7 @@ $('#journalAcronym').on('input', function() {
         return
     }
     $(this).attr('data-value', $(this).val())
-})
+});
 $('#partnerContact').on('input', function() {
     var cursor_pos = $(this).getCursorPosition()
     if(!(/^[a-zA-Z @ _ 0-9 .]*$/.test($(this).val())) ) {
@@ -250,12 +250,6 @@ $('#partnerContact').on('input', function() {
         return
     }
     $(this).attr('data-value', $(this).val())
-})
-
-$('#doiPrefix').keypress(function(event) {
-    if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
-        event.preventDefault();
-    }
 });
 </script>
 <Script>
@@ -279,7 +273,7 @@ function getuniqID(){
 	var title = document.getElementById("title").value
 	 var value = $("#examID option:selected"); 
 	//alert(aid);
-	$("#uniqID").prop('disabled', true);
+//	$("#uniqID").prop('disabled', true);
 //	 $('#examID').val(examID);
 //	 $('#title').val(title);
 	 var journal = title +'/'+value.text();

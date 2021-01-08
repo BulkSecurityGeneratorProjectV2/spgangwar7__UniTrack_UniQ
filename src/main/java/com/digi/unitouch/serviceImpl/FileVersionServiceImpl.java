@@ -31,11 +31,13 @@ public class FileVersionServiceImpl implements FileVersionService {
 		fileRepo.save(fileVesion);
 
 	}
+
 	@Override
 	public FileVersion getOne(int fileID) {
 		// TODO Auto-generated method stub
 		return fileRepo.getOne(fileID);
 	}
+
 	@Override
 	public List<FileVersion> findbyAidJidTid(Integer articleId, Integer journalId, Integer taskId) {
 		List<FileVersion> fileV = fileRepo.findByArticleIdAndJournalIdAndTaskId(articleId, journalId, taskId);
@@ -68,15 +70,15 @@ public class FileVersionServiceImpl implements FileVersionService {
 
 	@Override
 	public List<FileVersion> findbyAidJid(Integer article_id, Integer journalId) {
-		
+
 		List<FileVersion> fileV = fileRepo.findByArticleIdAndJournalId(article_id, journalId);
-		
+
 		return fileV;
-		
+
 	}
-	
+
 	@Override
-	public int maxVersionArticleIdAndJournalId(Integer article_id, Integer journalId) {
+	public Integer maxVersionArticleIdAndJournalId(Integer article_id, Integer journalId) {
 		int maxnum = 1;
 		try {
 			maxnum = fileRepo.maxVersionArticleIdAndJournalId(article_id, journalId);
@@ -87,7 +89,7 @@ public class FileVersionServiceImpl implements FileVersionService {
 	}
 
 	@Override
-	public int maxVersionIssueIdAndJournalId(Integer issueId, Integer journalId) {
+	public Integer maxVersionIssueIdAndJournalId(Integer issueId, Integer journalId) {
 		int maxnum = 1;
 		try {
 			maxnum = issueFileVersionRepo.maxVersionIssueIdAndJournalId(issueId, journalId);
@@ -97,7 +99,6 @@ public class FileVersionServiceImpl implements FileVersionService {
 		}
 	}
 
-	
 	@Override
 	public List<FileVersion> findbymaxFileVersion(Integer article_id, Integer journalId) {
 		List<FileVersion> fileV = fileRepo.findByArticleIdAndJournalId(article_id, journalId);
@@ -121,35 +122,38 @@ public class FileVersionServiceImpl implements FileVersionService {
 			System.out.println("  :: " + maxVersion);
 			return fileV;
 		}
-	
+
 	}
 
 	@Override
 	public boolean saveIssueFileVersion(IssueFileVersion fileVersion) {
-	
-			issueFileVersionRepo.saveAndFlush(fileVersion);
-			return true;
-	
+
+		issueFileVersionRepo.saveAndFlush(fileVersion);
+		return true;
+
 	}
 
 	@Override
 	public Integer saveIssueFileVersionID(IssueFileVersion fileVersion) {
-	
-			issueFileVersionRepo.saveAndFlush(fileVersion);
-			return fileVersion.getId();
-	
+
+		issueFileVersionRepo.saveAndFlush(fileVersion);
+		return fileVersion.getId();
+
 	}
+
 	@Override
 	public List<IssueFileVersion> findbyissueIdJid(Integer issue_id, Integer journalId) {
-	List<IssueFileVersion> fileV = issueFileVersionRepo.findByIssueIdAndJournalId(issue_id, journalId);
-		
+		List<IssueFileVersion> fileV = issueFileVersionRepo.findByIssueIdAndJournalId(issue_id, journalId);
+
 		return fileV;
 	}
+
 	@Override
 	public void saveArticleFileVersionReplaceRepo(ArticleFileVersionReplace articleFileVersionReplace) {
 		// TODO Auto-generated method stub
 		articleFileVersionReplaceRepo.save(articleFileVersionReplace);
 	}
+
 	@Override
 	public List<IssueFileVersion> findByIssueIdAndJournalIdAndFileName(Integer issue_id, Integer journalId,
 			String fileName) {
@@ -157,6 +161,22 @@ public class FileVersionServiceImpl implements FileVersionService {
 		return issueFileVersionRepo.getbyFilename(issue_id, journalId, fileName);
 	}
 
+	@Override
+	public Integer maxArticleIdAndJournalId() {
+		// TODO Auto-generated method stub
+		return fileRepo.maxArticleIdAndJournalId();
+	}
 
+	@Override
+	public List<FileVersion> getbyuserid(Integer userId) {
+		// TODO Auto-generated method stub
+		return fileRepo.getbyuserid(userId);
+	}
 
+	@Override
+	public Integer getSumbyUserid(Integer userId) {
+		// TODO Auto-generated method stub
+		return fileRepo.getSumbyUserid(userId);
+
+	}
 }

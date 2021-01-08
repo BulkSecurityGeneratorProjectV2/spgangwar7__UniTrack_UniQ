@@ -14,6 +14,15 @@ public interface FileVersionRepo extends JpaRepository<FileVersion, Integer> {
 	List<FileVersion> findByArticleIdAndJournalId(Integer article_id, Integer journalId);
 
 	@Query(value = "SELECT MAX(fileVersion) FROM FileVersion WHERE articleId=:article_id AND journalId=:journalId")
-	public int maxVersionArticleIdAndJournalId(Integer article_id, Integer journalId);
+	public Integer maxVersionArticleIdAndJournalId(Integer article_id, Integer journalId);
+	
+	@Query(value = "SELECT sum(queInFile) FROM FileVersion")
+	public Integer maxArticleIdAndJournalId();
+
+	@Query(value = "SELECT fv FROM FileVersion fv where fv.created_by=:userId")
+	List<FileVersion> getbyuserid(Integer userId);
+	
+	@Query(value = "SELECT sum(queInFile) FROM FileVersion fv where fv.created_by=:userId")
+	public Integer getSumbyUserid(Integer userId);
 
 }

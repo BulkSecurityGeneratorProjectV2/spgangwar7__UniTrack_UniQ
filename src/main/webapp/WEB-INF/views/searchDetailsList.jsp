@@ -306,6 +306,7 @@
 													<th>File Name</th>
 
 													<th>File Version</th>
+													<th>No. of Question</th>
 												<!-- 	<th>File Size</th> -->
 													<th>Task Name</th>
 													<th>User Name</th>
@@ -323,6 +324,7 @@
 														<td>${temp.fileName}</td>
 
 														<td>${temp.fileVersion}</td>
+															<td>${temp.queInFile}</td>
 													<%-- 	<td>${temp.size}</td> --%>
 														<td>${temp.taskDetails.taskName}</td>
 														<td>${temp.userDetails.firstName}

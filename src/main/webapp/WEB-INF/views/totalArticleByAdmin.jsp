@@ -54,9 +54,9 @@
 <form name="mang" id="mang">
 	<div class="main_part_outer" id="content">
 		<div class="d-flex flex-column w-100 h-100">
-			<button type="button" onclick="downloadExcel()"
-				class="btn btn-dark btn-sm float-right ml-2">Download WIP
-				Report</button>
+<!-- 			<button type="button" onclick="downloadExcel()" -->
+<!-- 				class="btn btn-dark btn-sm float-right ml-2">Download WIP -->
+<!-- 				Report</button> -->
 			<div class="container-fluid">
 				<!--main_tittle-->
 				<div class="row">
@@ -65,11 +65,11 @@
 							Total <spring:message code="chapters.articles" /><span id="Date">Wednesday , 21
 								November 2018</span>
 						</div>
-						<label></label>
-						<button type="button" class="btn btn-info btn-sm mt-3"
-							onclick="articleRejected()">Download Withdraw <spring:message code="chapters.articles" /></button>
-						<button type="button" class="btn btn-info btn-sm mt-3"
-							onclick="masterReports()">Master Reports</button>
+<!-- 						<label></label> -->
+<!-- 						<button type="button" class="btn btn-info btn-sm mt-3" -->
+<%-- 							onclick="articleRejected()">Download Withdraw <spring:message code="chapters.articles" /></button> --%>
+<!-- 						<button type="button" class="btn btn-info btn-sm mt-3" -->
+<!-- 							onclick="masterReports()">Master Reports</button> -->
 					</div>
 					<div class="col-md-6">
 						<div class="box-body">
@@ -180,7 +180,8 @@
         data: [
             ['Total <spring:message code="chapters.articles" />', ${totalArticle}],
             ['Rejected <spring:message code="chapters.articles" />', ${statusRejectCount}],
-            ['Total Noms', ${totalIssue}]
+            ['Total Noms', ${totalIssue}],
+            ['Total QueSubmit', ${sumofNoms}]
           
         ],
         dataLabels: {

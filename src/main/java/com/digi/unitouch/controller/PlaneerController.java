@@ -16,17 +16,19 @@ import com.digi.unitouch.model.Department;
 import com.digi.unitouch.model.ManageJournalWorkflow;
 import com.digi.unitouch.model.Role;
 import com.digi.unitouch.model.TaskScheduler;
+import com.digi.unitouch.model.Users;
 import com.digi.unitouch.service.ArticleService;
 import com.digi.unitouch.service.DepartmentService;
+import com.digi.unitouch.service.FileVersionService;
 import com.digi.unitouch.service.ManageJournalworkflowService;
 import com.digi.unitouch.service.RoleService;
 import com.digi.unitouch.service.TaskManagementService;
 import com.digi.unitouch.service.TaskService;
+import com.digi.unitouch.service.UserService;
 import com.digi.unitouch.util.LoggerClass;
 import com.digi.unitouch.vo.ArticleDetailplannerVo;
 import com.digi.unitouch.vo.PlannerVo;
 import com.digi.unitouch.vo.TaskManagementVo;
-import com.digi.unitouch.vo.userDepartmentVo;
 
 @Controller
 public class PlaneerController extends LoggerClass{
@@ -45,6 +47,11 @@ public class PlaneerController extends LoggerClass{
 	ManageJournalworkflowService manageJournalworkflowService;
 	@Autowired
 	TaskManagementService taskManagementService;
+	@Autowired
+	FileVersionService fileVersionService;
+	@Autowired
+	UserService userService;
+	
 	
 	@GetMapping("/planner")
 	public ModelAndView articalDeatilsList(ModelMap model) {
@@ -96,19 +103,27 @@ public class PlaneerController extends LoggerClass{
 	
 	@PostMapping("/viewplannerSuplierUserWise")
 	public ModelAndView findPlannerDepartmentByUserIds(HttpServletRequest request,ModelMap model) {
-		
 		String userId  = request.getParameter("userid");
 		String roleId=request.getParameter("roleID");
+	
 	    int role = Integer.parseInt(roleId);
 	    int uid = Integer.parseInt(userId);
-		    
-	    
-		LOGGER.debug(roleId+"  :: "+userId);
-        
-		
+	    Users user=	userService.findByUserId(uid);
+	    model.put("userFLName", user.getFirstName()+" "+user.getLastName());
+		LOGGER.debug(roleId + "  :: " + userId);
+//		List<FileVersion> fileVersion = fileVersionService.getbyuserid(uid);
+		Integer sumofque = fileVersionService.getSumbyUserid(uid);
+		if(sumofque==null) {
+			sumofque=0;
+		}
+		model.put("sumofque", sumofque);
 		List<TaskManagementVo> taskManagementVo = taskManagementService.getmyTaskManagementListforPlanner(uid);
 		model.put("taskManagementVo", taskManagementVo);
-		
+		Integer totalnoms=0;
+		for (TaskManagementVo taskManagementVo2 : taskManagementVo) {
+			totalnoms=totalnoms+Integer.parseInt(taskManagementVo2.getSubjectnoms());
+		}
+		model.put("totalnoms", totalnoms);
 		//List<TaskScheduler> taskScheduler = taskService.getOverDueTaskList(uid);
 		//model.put("totalarticleavailablepastdate", taskScheduler);
 		//model.put("totalarticleavailablepast", taskScheduler.size());

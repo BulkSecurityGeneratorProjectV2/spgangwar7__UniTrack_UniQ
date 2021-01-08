@@ -19,7 +19,7 @@
 				<div class="container-fluid">
 					<div class="main_tittle d-flex align-items-center">
 						<input type="hidden" name="type" value="${type}">
-						<span class="mr-2">Manage ${type} Workflow</span> <span id="Date">Mon
+						<span class="mr-2">Manage  Workflow</span> <span id="Date">Mon
 								, 26 Aug 2019</span>
 								<span class="ml-auto"><label for="currency"><spring:message code="book.journal" /> Name : ${journalName}</label></span><span class="ml-auto">
 								<button type="submit" class="btn btn-outline-danger fa fa-arrow-left"
@@ -47,7 +47,7 @@
 									<div class="row">
 										<div class="col-md-4">
 											<div class="form-group">
-												<label for="currency">Choose ${type} Workflow</label><br>
+												<label for="currency">Choose  Workflow</label><br>
 												<form:select path="workflowslist" id="id" name="id"
 													class="form-control">
 													<form:option value="Please Select" labelValue="" />

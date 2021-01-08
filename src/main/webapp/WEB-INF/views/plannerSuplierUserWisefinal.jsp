@@ -30,7 +30,7 @@
 				<!--main_tittle-->
 				    <div class="row">
 				       <div class="col-md-9">
-				           <div class="main_tittle">Planner's Dashboard User Wise<span id="Date">Wednesday , 21 November 2018</span></div>
+				           <div class="main_tittle">${userFLName} Dashboard's</div>
 				        <%--    <c:if test="${deptID eq null}">
 				           <h6></h6>
 				           </c:if>
@@ -69,7 +69,7 @@
       <div class="col col-md-4 mb-3"> 
         <!-- small box -->
         <div class="small-box bg-blue-gradient d-flex align-items-center h-100 text-white" >
-        	<h3>Today's Target (Articles) &nbsp;:&nbsp; ${totalarticleavailableToday.size()}
+        	<h3>Today's Target (<spring:message code="chapters.articles" />) &nbsp;:&nbsp; ${totalarticleavailableToday.size()}
             <span class="d-block text-capitalize text-small"><a href="#" class="text-white" onclick="showAndHide('inprocess')">More info <i class="fa fa-long-arrow-right"></i></a></span>
             </h3>
             <div class="icon ml-auto">
@@ -80,7 +80,7 @@
       <div class="col col-md-4 mb-3"> 
         <!-- small box -->
         <div class="small-box bg-orange-gradient d-flex align-items-center h-100 text-white" >
-        	<h3>Total Overdue Articles &nbsp;:&nbsp; ${totalarticleavailablepastdate.size()}
+        	<h3>Total Overdue <spring:message code="chapters.articles" /> &nbsp;:&nbsp; ${totalarticleavailablepastdate.size()}
             <span class="d-block text-capitalize text-small"><a href="#" class="text-white" onclick="showAndHide('complete')">More info <i class="fa fa-long-arrow-right"></i></a></span>
             </h3>
             <div class="icon ml-auto">
@@ -92,7 +92,7 @@
       <div class="col col-md-4 mb-3"> 
         <!-- small box -->
         <div class="small-box bg-green-gradient d-flex align-items-center h-100 text-white" >
-        	<h3>Overdue Articles &nbsp;:&nbsp; ${totalarticleavailablepast24.size()}
+        	<h3>Overdue <spring:message code="chapters.articles" /> &nbsp;:&nbsp; ${totalarticleavailablepast24.size()}
             <span class="d-block text-capitalize text-small"><a href="#" class="text-white" onclick="showAndHide('overdue')">More info <i class="fa fa-long-arrow-right"></i></a></span>
             </h3>
             <div class="icon ml-auto">
@@ -165,7 +165,7 @@
       <div class="col col-md-4 mb-3"> 
         <!-- small box -->
         <div class="small-box bg-red-gradient d-flex align-items-center h-100 text-white" >
-        	<h3>Overdue Articles &nbsp;:&nbsp; ${totalarticleavailablepast48.size()}
+        	<h3>Overdue <spring:message code="chapters.articles" /> &nbsp;:&nbsp; ${totalarticleavailablepast48.size()}
             <span class="d-block text-capitalize text-small"><a href="#" class="text-white" onclick="showAndHide('overdue1')">More info <i class="fa fa-long-arrow-right"></i></a></span>
             </h3>
             <div class="icon ml-auto">
@@ -226,7 +226,7 @@
        <div class="col col-md-4 mb-3"> 
         <!-- small box -->
         <div class="small-box bg-dark-blue-gradient d-flex align-items-center h-100 text-white" >
-        	<h3>Overdue Articles&nbsp;:&nbsp; ${totalarticleavailablepastdate.size()}
+        	<h3>Overdue <spring:message code="chapters.articles" />&nbsp;:&nbsp; ${totalarticleavailablepastdate.size()}
             <span class="d-block text-capitalize text-small"><a href="#" class="text-white" onclick="showAndHide('overdue2')">More info <i class="fa fa-long-arrow-right"></i></a></span>
             </h3>
             <div class="icon ml-auto">
@@ -298,12 +298,12 @@
 												<tr>
 													 <th>S.No.</th>
 													
-												    <th>Article ID</th>
-													<th>Articles Title</th>
+												    <th><spring:message code="chapter.article" /> ID</th>
+													<th><spring:message code="chapter.article" /> Title</th>
 													 <th>Journal Name</th>
-													<th>Articles DOI</th>
+													<th><spring:message code="chapter.article" /> DOI</th>
 													<th>Delivery Date</th>
-													<th>Articles Type </th>
+													<th><spring:message code="chapter.article" /> Type </th>
 												</tr>
 											</thead>
 											<tbody>
@@ -337,13 +337,13 @@
 											<thead class="table-head">
 												<tr>
 													 <th>S.No.</th>
-												    <th>Article ID</th>
-													<th>Articles Title</th>
+												    <th><spring:message code="chapter.article" /> ID</th>
+													<th><spring:message code="chapter.article" /> Title</th>
 													 <th>Journal Name</th>
 													
-													<th>Articles DOI</th>
+													<th><spring:message code="chapter.article" /> DOI</th>
 													<th>Delivery Date</th>
-													<th>Articles Type </th>
+													<th><spring:message code="chapter.article" /> Type </th>
 												</tr>
 											</thead>
 											<tbody>
@@ -377,13 +377,13 @@
 											<thead class="table-head">
 												<tr>
 												 <th>S.No.</th>
-												    <th>Article ID</th>
-													<th>Articles Title</th>
+												    <th><spring:message code="chapter.article" /> ID</th>
+													<th><spring:message code="chapter.article" /> Title</th>
 													<th>Journal Name</th>
 													
-													<th>Articles DOI</th>
+													<th><spring:message code="chapter.article" /> DOI</th>
 													<th>Delivery Date</th>
-													<th>Articles Type </th>
+													<th><spring:message code="chapter.article" /> Type </th>
 												</tr>
 											</thead>
 											<tbody>
@@ -421,12 +421,12 @@
 											<thead class="table-head">
 												<tr>
 												   <th>S.No.</th>
-												    <th>Article ID</th>
-													<th>Articles Title</th>
+												    <th><spring:message code="chapter.article" /> ID</th>
+													<th><spring:message code="chapter.article" /> Title</th>
 													<th>Journal Name</th>
-													<th>Articles DOI</th>
+													<th><spring:message code="chapter.article" /> DOI</th>
 													<th>Delivery Date</th>
-													<th>Articles Type</th>
+													<th><spring:message code="chapter.article" /> Type</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -461,13 +461,13 @@
 											<thead class="table-head">
 												<tr>
 												   <th>S.No.</th>
-												    <th>Article ID</th>
-													<th>Articles Title</th>
+												    <th><spring:message code="chapter.article" /> ID</th>
+													<th><spring:message code="chapter.article" /> Title</th>
 													<th>Journal Name</th>
 												
-													<th>Articles DOI</th>
+													<th><spring:message code="chapter.article" /> DOI</th>
 													<th>Delivery Date</th>
-													<th>Articles Type</th>
+													<th><spring:message code="chapter.article" /> Type</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -502,12 +502,12 @@
 											<thead class="table-head">
 												<tr>
 												    <th>S.No.</th>
-												    <th>Article ID</th>
-													<th>Articles Title</th>
+												    <th><spring:message code="chapter.article" /> ID</th>
+													<th><spring:message code="chapter.article" /> Title</th>
 													<th>Journal Name</th>
-													<th>Articles DOI</th>
+													<th><spring:message code="chapter.article" /> DOI</th>
 													<th>Delivery Date</th>
-													<th>Articles Type </th>
+													<th><spring:message code="chapter.article" /> Type </th>
 												</tr>
 											</thead>
 											<tbody>
@@ -532,13 +532,18 @@
 						</div>
 										
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-4">
 							<div class="content_box p-3">
 								<div id="containerthree"></div>
 							</div>
-							 
 							</div>
-							<div class="col-md-6">
+							
+							<div class="col-md-4">
+							<div class="content_box p-3">
+								<div id="containernoms"></div>
+							</div>
+							</div>
+							<div class="col-md-4">
 								<div class="content_box p-3">
 			               			<div id="container"></div>
 			               		</div>
@@ -678,7 +683,7 @@ Highcharts.chart('container', {
         type: 'pie'
     },
     title: {
-        text: 'Day Wise Current Articles Load'
+        text: 'Day Wise Current <spring:message code="chapters.articles" /> Load'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage}%</b>'
@@ -694,7 +699,7 @@ Highcharts.chart('container', {
         }
     },
     series: [{
-        name: 'Article',
+        name: '<spring:message code="chapter.article" />',
         colorByPoint: true,
         data: [ {
             name: '24 Hour',
@@ -716,7 +721,7 @@ Highcharts.chart('containerthree', {
         type: 'column'
     },
     title: {
-        text: 'Day Wise Current Articles Load '
+        text: 'Day Wise Current <spring:message code="chapter.article" /> Load '
     },
 
     xAxis: {
@@ -730,7 +735,7 @@ Highcharts.chart('containerthree', {
     yAxis: {
         min: 0,
         title: {
-            text: 'Article Load'
+            text: '<spring:message code="chapter.article" /> Load'
         }
     },
     tooltip: {
@@ -749,7 +754,7 @@ Highcharts.chart('containerthree', {
     },
     series: [{
     	 y: 4,
-        name: 'Article',
+        name: '<spring:message code="chapter.article" />',
         color: "#9B344C",
         data: [<c:forEach items="${totalarticleavailableGraph}" var="entry">${entry.article_count},</c:forEach> ]
     	
@@ -757,4 +762,53 @@ Highcharts.chart('containerthree', {
 });
 
 </script> 
+<script type="text/javascript"> 
+
+Highcharts.chart('containernoms', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Total Noms'
+    },
+
+    xAxis: {
+    	categories: [
+        	
+    		[  'Total Noms' ],   [  'Completed Noms' ]
+          
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total Noms'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding:.2,
+            borderWidth: .1
+        }
+    },
+    series: [{
+    	 y: 4,
+        name: 'Noms',
+        color: "#9B344C",
+        data: [${totalnoms},${sumofque}]
+    	
+    }]
+});
+
+</script> 
+
 

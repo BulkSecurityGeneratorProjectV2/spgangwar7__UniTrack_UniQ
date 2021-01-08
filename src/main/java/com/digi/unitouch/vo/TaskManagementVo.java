@@ -39,6 +39,8 @@ public class TaskManagementVo
 	
 	private String publisherName;
 	
+	private String subjectnoms;
+	
 	public TaskManagementVo() {}
 	
 	public Integer getArticle_id() {
@@ -195,6 +197,16 @@ public class TaskManagementVo
 	public void setAccepted_date(String accepted_date) {
 		this.accepted_date = accepted_date;
 	}
+	
+	
+
+	public String getSubjectnoms() {
+		return subjectnoms;
+	}
+
+	public void setSubjectnoms(String subjectnoms) {
+		this.subjectnoms = subjectnoms;
+	}
 
 	public TaskManagementVo(Integer article_id, Integer journalId, String article_title, String task_status,
 			Date sch_start_time, Date sch_end_time, Integer article_task_id, String journalAbbrName, String aid,
@@ -276,7 +288,7 @@ public class TaskManagementVo
 	//new added 28-05
 	public TaskManagementVo(Integer article_id, Integer journalId, String article_title, String task_status,
 			Date sch_start_time, Date sch_end_time, Integer article_task_id, String journalAbbrName ,String aid,
-			String taskName,String priority,String article_doi, String article_type_cd,Integer publisher_id, String publisherName) {
+			String taskName,String priority,String article_doi, String article_type_cd,Integer publisher_id, String publisherName,String subjectnoms) {
 		super();
 		this.article_id = article_id;
 		this.journalId = journalId;
@@ -294,6 +306,7 @@ public class TaskManagementVo
 		this.article_type_cd= article_type_cd;
 		this.publisher_id = publisher_id;
 		this.publisherName = publisherName;
+		this.subjectnoms=subjectnoms;
 
 	}
 	@Override

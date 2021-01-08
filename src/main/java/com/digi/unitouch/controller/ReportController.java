@@ -32,6 +32,7 @@ import com.digi.unitouch.model.TaskScheduler;
 import com.digi.unitouch.model.Users;
 import com.digi.unitouch.service.ArticleService;
 import com.digi.unitouch.service.DepartmentService;
+import com.digi.unitouch.service.FileVersionService;
 import com.digi.unitouch.service.IssueArticleService;
 import com.digi.unitouch.service.IssueDetailService;
 import com.digi.unitouch.service.JournalService;
@@ -83,6 +84,9 @@ public class ReportController extends LoggerClass {
 //	ArticleTaskDetailService articleTaskDetailService;
 	@Autowired
 	IssueArticleService issueArticleService;
+
+	@Autowired
+	FileVersionService fileVersionService;
 
 	@RequestMapping(value = { "/viewcloud" })
 	public ModelAndView viewviewcloud(ModelMap model, HttpServletRequest request) {
@@ -274,12 +278,12 @@ public class ReportController extends LoggerClass {
 		model.put("ArticleDetail", taskManagementVoList.size());
 		System.out.println("ArticleDetail :" + taskManagementVoList.size());
 
-		List<IssueDetail> issuetaskDetails = issueDetailService.getAllList();
-		System.out.println("Issues :" + issuetaskDetails.size());
+		// List<IssueDetail> issuetaskDetails = issueDetailService.getAllList();
+		// System.out.println("Issues :" + issuetaskDetails.size());
 
 		Integer TotalPage = null;
 		Integer Totalnoms = null;
-		
+
 		for (int i = 0; i < taskManagementVoList.size(); i++) {
 			Integer journalID = taskManagementVoList.get(i).getJournalId();
 			Integer articalId = taskManagementVoList.get(i).getArticle_id();
@@ -290,19 +294,19 @@ public class ReportController extends LoggerClass {
 			for (int j = 0; j < list.size(); j++) {
 				if (page == null) {
 					page = list.get(j).getArticle_pages();
-					noms=Integer.parseInt(list.get(j).getSubjectnoms());
+					noms = Integer.parseInt(list.get(j).getSubjectnoms());
 				} else {
 					page = page + list.get(j).getArticle_pages();
-					noms=Integer.parseInt(list.get(j).getSubjectnoms());
+					noms = Integer.parseInt(list.get(j).getSubjectnoms());
 				}
 			}
 			if (TotalPage == null) {
 				TotalPage = page;
-				Totalnoms=noms;
+				Totalnoms = noms;
 			} else {
 				try {
 					TotalPage = TotalPage + page;
-					Totalnoms=Totalnoms+noms;
+					Totalnoms = Totalnoms + noms;
 				} catch (NullPointerException e) {
 					System.out.println("NullPointerException Caught");
 				}
@@ -312,13 +316,15 @@ public class ReportController extends LoggerClass {
 		// model.put("totalpages", TotalPage);
 		model.put("totalArticle", taskManagementVoList.size());
 		model.put("totalPage", TotalPage);
-		
+
 		model.put("totalIssue", Totalnoms);
 		List<ProductivityTaskVo> productivityTaskVo = taskService.getproductivityTaskCount();
 		model.put("productivityTask", productivityTaskVo);
 		List<ArticleDetail> statusRejectCount = articleService.getTotalcountRejected();
 		System.out.println("statusRejectCount ArticleDetail:->" + statusRejectCount.size());
 		model.put("statusRejectCount", statusRejectCount.size());
+		int sumofNoms = fileVersionService.maxArticleIdAndJournalId();
+		model.put("sumofNoms", sumofNoms);
 		return new ModelAndView("totalArticleByAdmin");
 	}
 
@@ -540,7 +546,7 @@ public class ReportController extends LoggerClass {
 				// if(data.getArticle_id() != ts1.getArticle_id()) {
 
 				List<TaskScheduler> ts = taskService.getAricleIDORTaskID(data.getArticle_id());
-		//		System.out.println(ts.toString());
+				// System.out.println(ts.toString());
 				List<String> taskName = new ArrayList<String>();
 				Set<TaskTime> taskTime = new HashSet<TaskTime>();
 				LinkedHashMap<String, TaskTime> taskMap1 = new LinkedHashMap<String, TaskTime>();
@@ -555,17 +561,17 @@ public class ReportController extends LoggerClass {
 
 						long diff = Currentdate.getTime() - startdate.getTime();
 						diffDays = (int) (diff / (24 * 60 * 60 * 1000));
-						//System.out.println("difference between days: " + diffDays);
+						// System.out.println("difference between days: " + diffDays);
 						vo.setCurrentPhaseDate(dateFormat.format(ts.get(0).getTask_assigned_date()));
 						vo.setDuePhaseDate(dateFormat.format(ts.get(0).getTask_due_date()));
 						vo.setAge(diffDays);
 						TaskTime tn = new TaskTime();
 						taskName.add(ts.get(i).getTask().getTaskName());
 						tn.setStartTime(ts.get(i).getTask_est_time_from());
-						
+
 						if (ts.get(i).getTask_est_time_end() != null) {
-						tn.setEndTime(ts.get(i).getTask_est_time_end());}
-						else {
+							tn.setEndTime(ts.get(i).getTask_est_time_end());
+						} else {
 							tn.setEndTime("");
 						}
 						tn.setTaskName(ts.get(i).getTask().getTaskName());
@@ -606,11 +612,10 @@ public class ReportController extends LoggerClass {
 			MasterDetailsExcelUtils.downloadMasterReports(response, taskManagementVoli);
 
 		} catch (NullPointerException e) {
-			LOGGER.info("Null pointer"+e);
+			LOGGER.info("Null pointer" + e);
 			e.printStackTrace();
 			System.out.println("NullPointerException Caught");
 		}
 	}
-
 
 }

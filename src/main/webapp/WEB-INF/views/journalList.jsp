@@ -42,6 +42,8 @@
 
 							<input type="hidden" name="workflowid" id="workflowid">
 							<div class="content_box">
+							<input type="hidden" name="jId"
+														id="jId">
 								<div class="box-body">
 									<table class="table table-striped table-bordered m-0"
 										id="journalTable" style="max-width: 100%">
@@ -65,8 +67,7 @@
 											<c:forEach var="temp" items="${journallist}"
 												varStatus="counter">
 												<tr>
-													<td align="center"><input type="hidden" name="jId"
-														id="jId"> <c:if
+													<td align="center"> <c:if
 															test="${temp.articleWorkflowId eq 0}">
 															<a href="#" onclick="editworkFlowTask(${temp.journalId})"
 																data-placement="top" title="Add Workflow"> <i

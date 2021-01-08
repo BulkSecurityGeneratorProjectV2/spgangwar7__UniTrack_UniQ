@@ -40,6 +40,7 @@ public class ExamController {
 		Users users = userService.findUserIdByUserName(name);
 		examDetails.setCreate_by(users.getUserID());
 		examDetails.setCreateTime(new Date());
+		examDetails.setUpdateTime(new Date());
 		examService.saveExam(examDetails);
 		ra.addAttribute("message", "Exam created successfully");
 		ra.addAttribute("css", "success");

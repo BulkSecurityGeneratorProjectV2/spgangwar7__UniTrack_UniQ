@@ -386,6 +386,7 @@ public class ArticleController extends LoggerClass {
 					fileVersion.setFileType(attachment.getContentType());
 					fileVersion.setFileVersion(1);
 					fileVersion.setTaskId(taskId);
+					fileVersion.setQueInFile(0);
 					fileVersion.setFilePath(path.toString());
 					fileversionservice.saveFileVersion(fileVersion);
 					Files.write(path, bytes);

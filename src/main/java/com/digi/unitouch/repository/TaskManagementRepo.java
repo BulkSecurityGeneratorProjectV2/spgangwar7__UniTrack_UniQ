@@ -222,7 +222,8 @@ import com.digi.unitouch.vo.userDepartmentVo;
 //		List<TaskManagementVo> getmyTaskManagementList(Integer userID, Integer jid);
 //
 		  
-		  @Query(value="SELECT new com.digi.unitouch.vo.TaskManagementVo(ad.article_id,jj.journalId,ad.article_title,ast.task_status,ast.sch_start_time,ast.sch_end_time,ast.article_task_id,jj.journalAbbrName,ad.aid,td.taskName,ad.priority,ad.article_doi,ad.article_type_cd,ad.publisher_id,p.publisherName) "
+		  @Query(value="SELECT new com.digi.unitouch.vo.TaskManagementVo(ad.article_id,jj.journalId,ad.article_title,ast.task_status,ast.sch_start_time,ast.sch_end_time,"
+		  		+ "ast.article_task_id,jj.journalAbbrName,ad.aid,td.taskName,ad.priority,ad.article_doi,ad.article_type_cd,ad.publisher_id,p.publisherName,ad.subjectnoms) "
 			  		+ "FROM com.digi.unitouch.model.ArticleDetail ad JOIN com.digi.unitouch.model.TaskScheduler ast ON ast.article_id=ad.article_id "
 			  		+ "JOIN com.digi.unitouch.model.Journal jj ON jj.journalId = ad.journalId "
 			  		+ " JOIN com.digi.unitouch.model.CurrentArticleStatus cas ON cas.article_id=ast.article_id AND ast.task_id=cas.task_id "
