@@ -42,7 +42,10 @@ public  class UnZip
     	while(ze!=null){
     			
     	   String fileName = ze.getName();
-           File newFile = new File(outputFolder + File.separator + fileName);
+           File newFile = new File(outputFolder,fileName);
+						if (!newFile.toPath().normalize().startsWith(outputFolder)) {
+							throw new IOException("Bad zip entry");
+						}
                 
            System.out.println("file unzip : "+ newFile.getAbsoluteFile());
                 
@@ -77,7 +80,7 @@ public  class UnZip
 		byte[] buffer = new byte[1024];
 		try {
 
-			File folder = new File(outputFolder+File.separator+Name.substring(0, Name.indexOf(".")));
+			File folder = new File(outputFolder,Name.substring(0,Name.indexOf(".")));
 			if (!folder.exists()) {
 				folder.mkdir();
 			}
@@ -88,7 +91,10 @@ public  class UnZip
 			while (ze != null) 
 			{
 				String fileName = ze.getName();
-				File newFile = new File(outputFolder+ File.separator + Name.substring(0, Name.indexOf("."))+ File.separator + fileName);
+				File newFile = new File(outputFolder + File.separator + Name.substring(0,Name.indexOf(".")),fileName);
+				if (!newFile.toPath().normalize().startsWith(outputFolder + File.separator + Name.substring(0,Name.indexOf(".")))) {
+					throw new IOException("Bad zip entry");
+				}
 				System.out.println("file unzip : " + newFile.getAbsoluteFile());
 				new File(newFile.getParent()).mkdirs();
 				FileOutputStream fos = new FileOutputStream(newFile);
